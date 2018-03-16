@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBMICITT" Class="sqlConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=DBMICITT;Integrated Security=True" SettingsObjectName="MicittApp.DataAccess.Properties.Settings" SettingsPropertyName="DBMICITTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_CONS_DPTS" Member="TBL_CONS_DPTs">
+    <Type Name="TBL_CONS_DPT">
+      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_CONS_DPT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPTATEBY_CONS_DPT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_CONS_DPT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_CONS_DPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_CONS_DPT_TBL_DOC" Member="TBL_DOCs" ThisKey="ID_IDENTIFICADOR" OtherKey="ID_IDENTIFICADOR" Type="TBL_DOC" />
+      <Association Name="TBL_DPT_TBL_CONS_DPT" Member="TBL_DPT" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_DPT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_DIRECCIONES" Member="TBL_DIRECCIONEs">
+    <Type Name="TBL_DIRECCIONE">
+      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_DIR" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_DIR" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_DIR" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_DIR" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_DIRECCIONE_TBL_DPT" Member="TBL_DPTs" ThisKey="ID_DIRECCION" OtherKey="ID_DIRECCION" Type="TBL_DPT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_DOCS" Member="TBL_DOCs">
+    <Type Name="TBL_DOC">
+      <Column Name="ID_DOC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TITULO_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EMISOR_DOC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DESTINATARIO_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_DOC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UBICACION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_DOC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_DOC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_DOC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_DOC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_CONS_DPT_TBL_DOC" Member="TBL_CONS_DPT" ThisKey="ID_IDENTIFICADOR" OtherKey="ID_IDENTIFICADOR" Type="TBL_CONS_DPT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_DPTS" Member="TBL_DPTs">
+    <Type Name="TBL_DPT">
+      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_DPT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_DPT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_DPT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_DPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_DPT_TBL_CONS_DPT" Member="TBL_CONS_DPTs" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_CONS_DPT" />
+      <Association Name="TBL_DPT_TBL_USUARIO" Member="TBL_USUARIOs" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_USUARIO" />
+      <Association Name="TBL_DIRECCIONE_TBL_DPT" Member="TBL_DIRECCIONE" ThisKey="ID_DIRECCION" OtherKey="ID_DIRECCION" Type="TBL_DIRECCIONE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USUARIOS" Member="TBL_USUARIOs">
+    <Type Name="TBL_USUARIO">
+      <Column Name="ID_USER" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBREC_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO1_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO2_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO_USER" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFONO_USER" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_USER" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_USER" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_USER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_USER" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_DPT_TBL_USUARIO" Member="TBL_DPT" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_DPT" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
