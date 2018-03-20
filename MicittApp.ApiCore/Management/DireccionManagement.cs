@@ -8,14 +8,14 @@ using MicittApp.Entities.Objects;
 
 namespace MicittApp.ApiCore.Management
 {
-    public class DepartamentoManagement : BaseManagement
+    public class DireccionManagement : BaseManagement
     {
-        public DepartamentoManagement()
+        public DireccionManagement()
         {
-            _factory = new CrudDepartamento();
+            _factory = new CrudDireccion();
         }
         string ExcepMessage = null; // Management Exception
-        public void CreateDepartamento(Departamento Obj)
+        public void CreateDireccion(Direccion Obj)
         {
             try
             {
@@ -27,12 +27,12 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public List<T> RetrieveAllDepartamento<T>()
+        public List<T> RetrieveAlDireccion<T>()
         {
             var lst = new List<T>();
             try
             {
-                var ret = _factory.RetrieveAll<Departamento>();
+                var ret = _factory.RetrieveAll<Direccion>();
                 foreach (var obj in ret)
                 {
                     lst.Add((T)Convert.ChangeType(obj, typeof(T)));
@@ -45,7 +45,7 @@ namespace MicittApp.ApiCore.Management
             }
             return lst;
         }
-        public void UpdateDepartamento(Departamento Obj)
+        public void UpdateDireccion(Direccion Obj)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public void DeleteDepartamento(Departamento Obj)
+        public void DeleteDDireccion(Direccion Obj)
         {
             try
             {
@@ -69,6 +69,5 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-
     }
 }

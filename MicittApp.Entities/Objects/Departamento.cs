@@ -17,12 +17,22 @@ namespace MicittApp.Entities.Objects
             Descrip_Dtpo = "N/A";
             Id_Direccion = 0;
         }
-
         public Departamento(int pId_Dtpo, string pDescrip_Dtpo, int pId_Direccion)
         {
             this.Id_Dtpo = pId_Dtpo;
             this.Descrip_Dtpo = pDescrip_Dtpo;
             this.Id_Direccion = pId_Direccion;
+        }
+        public Departamento(int pId_Dtpo, string pDescrip_Dtpo, int pId_Direccion, bool pState, 
+            string pCreateby, string pUpdateby, DateTime pCreateDate)
+        {
+            this.Id_Dtpo = pId_Dtpo;
+            this.Descrip_Dtpo = pDescrip_Dtpo;
+            this.Id_Direccion = pId_Direccion;
+            this.State = pState;
+            this.Createby = pCreateby;
+            this.Updateby = pUpdateby;
+            this.Createdate = pCreateDate;
         }
     }
 }

@@ -8,14 +8,14 @@ using MicittApp.Entities.Objects;
 
 namespace MicittApp.ApiCore.Management
 {
-    public class DepartamentoManagement : BaseManagement
+    public class ConsecutivoManagement : BaseManagement
     {
-        public DepartamentoManagement()
+        public ConsecutivoManagement()
         {
-            _factory = new CrudDepartamento();
+            _factory = new CrudConsecutivo();
         }
         string ExcepMessage = null; // Management Exception
-        public void CreateDepartamento(Departamento Obj)
+        public void CreateConsecutivo(Consecutivo Obj)
         {
             try
             {
@@ -27,12 +27,12 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public List<T> RetrieveAllDepartamento<T>()
+        public List<T> RetrieveAllConsecutivo<T>()
         {
             var lst = new List<T>();
             try
             {
-                var ret = _factory.RetrieveAll<Departamento>();
+                var ret = _factory.RetrieveAll<Consecutivo>();
                 foreach (var obj in ret)
                 {
                     lst.Add((T)Convert.ChangeType(obj, typeof(T)));
@@ -45,7 +45,7 @@ namespace MicittApp.ApiCore.Management
             }
             return lst;
         }
-        public void UpdateDepartamento(Departamento Obj)
+        public void UpdateConsecutivo(Consecutivo Obj)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public void DeleteDepartamento(Departamento Obj)
+        public void DeleteConsecutivo(Consecutivo Obj)
         {
             try
             {
@@ -69,6 +69,5 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-
     }
 }

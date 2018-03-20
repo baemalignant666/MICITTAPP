@@ -41,7 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\BaseEntity.cs" />
+    <Compile Include="Objects\Consecutivo.cs" />
     <Compile Include="Objects\Departamento.cs" />
+    <Compile Include="Objects\Direccion.cs" />
+    <Compile Include="Objects\Documento.cs" />
+    <Compile Include="Objects\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

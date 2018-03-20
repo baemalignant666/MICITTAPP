@@ -41,7 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Management\BaseManagement.cs" />
+    <Compile Include="Management\ConsecutivoManagement.cs" />
     <Compile Include="Management\DepartamentoManagement.cs" />
+    <Compile Include="Management\DireccionManagement.cs" />
+    <Compile Include="Management\DocumentoManagement.cs" />
+    <Compile Include="Management\UsuarioManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

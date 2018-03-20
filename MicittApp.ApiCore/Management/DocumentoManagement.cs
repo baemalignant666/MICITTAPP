@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using MicittApp.DataAccess.Crud;
 using MicittApp.Entities.Objects;
+using System.Threading.Tasks;
 
 namespace MicittApp.ApiCore.Management
 {
-    public class DepartamentoManagement : BaseManagement
+    public class DocumentoManagement : BaseManagement
     {
-        public DepartamentoManagement()
+        public DocumentoManagement()
         {
-            _factory = new CrudDepartamento();
+            _factory = new CrudDocumento();
         }
         string ExcepMessage = null; // Management Exception
-        public void CreateDepartamento(Departamento Obj)
+        public void CreateDocumento(Documento Obj)
         {
             try
             {
@@ -27,12 +27,12 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public List<T> RetrieveAllDepartamento<T>()
+        public List<T> RetrieveAllDocumento<T>()
         {
             var lst = new List<T>();
             try
             {
-                var ret = _factory.RetrieveAll<Departamento>();
+                var ret = _factory.RetrieveAll<Documento>();
                 foreach (var obj in ret)
                 {
                     lst.Add((T)Convert.ChangeType(obj, typeof(T)));
@@ -45,7 +45,7 @@ namespace MicittApp.ApiCore.Management
             }
             return lst;
         }
-        public void UpdateDepartamento(Departamento Obj)
+        public void UpdateDocumento(Documento Obj)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public void DeleteDepartamento(Departamento Obj)
+        public void DeleteDDocumento(Documento Obj)
         {
             try
             {
@@ -69,6 +69,5 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-
     }
 }
