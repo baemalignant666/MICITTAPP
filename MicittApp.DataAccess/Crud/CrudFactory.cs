@@ -13,10 +13,5 @@ namespace MicittApp.DataAccess.Crud
         public abstract List<T> RetrieveAll<T>();
         public abstract bool Update(BaseEntity entity);
         public abstract bool Delete(BaseEntity entity);
-
-
-
-
-
     }
 }

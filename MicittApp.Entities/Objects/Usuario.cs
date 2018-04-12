@@ -8,7 +8,7 @@ namespace MicittApp.Entities.Objects
 {
     public class Usuario : BaseEntity
     {
-        public int Id_User { get; set; }
+        public string Id_User { get; set; }
         public string Nombrec_User { get; set; }
         public string Apellido1_User { get; set; }
         public string Apellido2_User { get; set; }
@@ -16,10 +16,11 @@ namespace MicittApp.Entities.Objects
         public string Telefono_User { get; set; }
         public int Id_Role { get; set; }
         public int Id_Dpto { get; set; }
+        public string Pass_User { get; set; }
 
         public Usuario()
         {
-            Id_User = 0;
+            Id_User = "N/A";
             Nombrec_User = "N/A";
             Apellido1_User = "N/A";
             Apellido2_User = "N/A";
@@ -27,9 +28,10 @@ namespace MicittApp.Entities.Objects
             Telefono_User = "N/A";
             Id_Role = 0;
             Id_Dpto = 0;
+            Pass_User = "N/A";
         }
-        public Usuario(int pId_User, string pNombrec_User, string pApellido1_User, string pApellido2_User, string pCorreo_User, 
-            string pTelefono_User, int pId_Role, int pId_Dpto)
+        public Usuario(string pId_User, string pNombrec_User, string pApellido1_User, string pApellido2_User, string pCorreo_User, 
+            string pTelefono_User, int pId_Role, int pId_Dpto, string pPass_User)
         {
             this.Id_User = pId_User;
             this.Nombrec_User = pNombrec_User;
@@ -39,9 +41,11 @@ namespace MicittApp.Entities.Objects
             this.Telefono_User = pTelefono_User;
             this.Id_Role = pId_Role;
             this.Id_Dpto = pId_Dpto;
+            this.Pass_User = pPass_User;
         }
-        public Usuario(int pId_User, string pNombrec_User, string pApellido1_User, string pApellido2_User, string pCorreo_User,
-            string pTelefono_User, int pId_Role, int pId_Dpto, bool pState, string pCreateby, string pUpdateby, DateTime pCreateDate)
+        public Usuario(string pId_User, string pNombrec_User, string pApellido1_User, string pApellido2_User, string pCorreo_User,
+            string pTelefono_User, int pId_Role, int pId_Dpto, bool pState, string pCreateby, string pUpdateby, 
+            DateTime pCreateDate, string pPass_User)
         {
             this.Id_User = pId_User;
             this.Nombrec_User = pNombrec_User;
@@ -51,10 +55,12 @@ namespace MicittApp.Entities.Objects
             this.Telefono_User = pTelefono_User;
             this.Id_Role = pId_Role;
             this.Id_Dpto = pId_Dpto;
+            this.Pass_User = pPass_User;
             this.State = pState;
             this.Createby = pCreateby;
             this.Updateby = pUpdateby;
             this.Createdate = pCreateDate;
+
         }
     }
 }

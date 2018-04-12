@@ -1,4 +1,4 @@
-﻿namespace MicittApp.UI.OnPromises
+﻿namespace MicittApp.UI.OnPromises.Forms
 {
     partial class frmDashboard
     {
@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.Text = "frmDashboard";
         }
 
         #endregion
     }
 }
-

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crud\CrudActionEnum.cs" />
     <Compile Include="Crud\CrudConsecutivo.cs" />
     <Compile Include="Crud\CrudDepartamento.cs" />
     <Compile Include="Crud\CrudDireccion.cs" />
@@ -75,15 +76,15 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="sqlConnection.dbml.layout">
-      <DependentUpon>sqlConnection.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MicittApp.Entities\MicittApp.Entities.csproj">
       <Project>{a9cd79e8-77a6-41f9-a382-f90242611786}</Project>
       <Name>MicittApp.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sqlConnection.dbml.layout">
+      <DependentUpon>sqlConnection.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

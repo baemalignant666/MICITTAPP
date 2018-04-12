@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MicittApp.UI.OnPromises
+namespace MicittApp.UI.OnPromises.Forms
 {
     public partial class frmDashboard : MetroFramework.Forms.MetroForm
     {

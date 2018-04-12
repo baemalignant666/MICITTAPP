@@ -33,9 +33,9 @@ namespace MicittApp.DataAccess
     partial void InsertTBL_CONS_DPT(TBL_CONS_DPT instance);
     partial void UpdateTBL_CONS_DPT(TBL_CONS_DPT instance);
     partial void DeleteTBL_CONS_DPT(TBL_CONS_DPT instance);
-    partial void InsertTBL_DIRECCIONE(TBL_DIRECCIONE instance);
-    partial void UpdateTBL_DIRECCIONE(TBL_DIRECCIONE instance);
-    partial void DeleteTBL_DIRECCIONE(TBL_DIRECCIONE instance);
+    partial void InsertTBL_DIRECCION(TBL_DIRECCION instance);
+    partial void UpdateTBL_DIRECCION(TBL_DIRECCION instance);
+    partial void DeleteTBL_DIRECCION(TBL_DIRECCION instance);
     partial void InsertTBL_DOC(TBL_DOC instance);
     partial void UpdateTBL_DOC(TBL_DOC instance);
     partial void DeleteTBL_DOC(TBL_DOC instance);
@@ -48,7 +48,7 @@ namespace MicittApp.DataAccess
     #endregion
 		
 		public sqlConnectionDataContext() : 
-				base(global::MicittApp.DataAccess.Properties.Settings.Default.DBMICITTConnectionString, mappingSource)
+				base(global::MicittApp.DataAccess.Properties.Settings.Default.DBMICITTConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -85,11 +85,11 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_DIRECCIONE> TBL_DIRECCIONEs
+		public System.Data.Linq.Table<TBL_DIRECCION> TBL_DIRECCIONs
 		{
 			get
 			{
-				return this.GetTable<TBL_DIRECCIONE>();
+				return this.GetTable<TBL_DIRECCION>();
 			}
 		}
 		
@@ -115,6 +115,41 @@ namespace MicittApp.DataAccess
 			{
 				return this.GetTable<TBL_USUARIO>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_DIRECCION")]
+		public ISingleResult<SP_CRUD_DIRECCIONResult> SP_CRUD_DIRECCION([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DIRECCION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pDESCRIP_DIR)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_DIRECCION, pDESCRIP_DIR);
+			return ((ISingleResult<SP_CRUD_DIRECCIONResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_DPTO")]
+		public ISingleResult<SP_CRUD_DPTOResult> SP_CRUD_DPTO([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pNOMBRE_DPT, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pDESCRIP_DPT, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DIRECCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_DPTO, pNOMBRE_DPT, pDESCRIP_DPT, pID_DIRECCION);
+			return ((ISingleResult<SP_CRUD_DPTOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_USUARIO")]
+		public ISingleResult<SP_CRUD_USUARIOResult> SP_CRUD_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pNOMBREC_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO1_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO2_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string pCORREO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string pTELEFONO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_ROLE, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pPASSWORD_USER)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_USER, pNOMBREC_USER, pAPELLIDO1_USER, pAPELLIDO2_USER, pCORREO_USER, pTELEFONO_USER, pID_ROLE, pID_DPTO, pPASSWORD_USER);
+			return ((ISingleResult<SP_CRUD_USUARIOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_CONS_DPT")]
+		public ISingleResult<SP_CRUD_CONS_DPTResult> SP_CRUD_CONS_DPT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string pID_IDENTIFICADOR, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_IDENTIFICADOR, pID_DPTO);
+			return ((ISingleResult<SP_CRUD_CONS_DPTResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_DOC")]
+		public ISingleResult<SP_CRUD_DOCResult> SP_CRUD_DOC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string pID_IDENTIFICADOR, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pTITULO_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pEMISOR_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pDESTINATARIO_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pFECHA_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pPRIORIDAD_DOC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pUBICACION_DOC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_DOC, pID_BY, pID_IDENTIFICADOR, pTITULO_DOC, pEMISOR_DOC, pDESTINATARIO_DOC, pFECHA_DOC, pPRIORIDAD_DOC, pUBICACION_DOC);
+			return ((ISingleResult<SP_CRUD_DOCResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -370,7 +405,7 @@ namespace MicittApp.DataAccess
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_DIRECCIONES")]
-	public partial class TBL_DIRECCIONE : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class TBL_DIRECCION : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -407,7 +442,7 @@ namespace MicittApp.DataAccess
     partial void OnCREATEDATE_DIRChanged();
     #endregion
 		
-		public TBL_DIRECCIONE()
+		public TBL_DIRECCION()
 		{
 			this._TBL_DPTs = new EntitySet<TBL_DPT>(new Action<TBL_DPT>(this.attach_TBL_DPTs), new Action<TBL_DPT>(this.detach_TBL_DPTs));
 			OnCreated();
@@ -533,7 +568,7 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_DIRECCIONE_TBL_DPT", Storage="_TBL_DPTs", ThisKey="ID_DIRECCION", OtherKey="ID_DIRECCION")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_DIRECCION_TBL_DPT", Storage="_TBL_DPTs", ThisKey="ID_DIRECCION", OtherKey="ID_DIRECCION")]
 		public EntitySet<TBL_DPT> TBL_DPTs
 		{
 			get
@@ -569,13 +604,13 @@ namespace MicittApp.DataAccess
 		private void attach_TBL_DPTs(TBL_DPT entity)
 		{
 			this.SendPropertyChanging();
-			entity.TBL_DIRECCIONE = this;
+			entity.TBL_DIRECCION = this;
 		}
 		
 		private void detach_TBL_DPTs(TBL_DPT entity)
 		{
 			this.SendPropertyChanging();
-			entity.TBL_DIRECCIONE = null;
+			entity.TBL_DIRECCION = null;
 		}
 	}
 	
@@ -597,9 +632,9 @@ namespace MicittApp.DataAccess
 		
 		private System.DateTime _FECHA_DOC;
 		
-		private string _PRIORIDAD;
+		private string _PRIORIDAD_DOC;
 		
-		private string _UBICACION;
+		private string _UBICACION_DOC;
 		
 		private string _CREATEBY_DOC;
 		
@@ -627,10 +662,10 @@ namespace MicittApp.DataAccess
     partial void OnDESTINATARIO_DOCChanged();
     partial void OnFECHA_DOCChanging(System.DateTime value);
     partial void OnFECHA_DOCChanged();
-    partial void OnPRIORIDADChanging(string value);
-    partial void OnPRIORIDADChanged();
-    partial void OnUBICACIONChanging(string value);
-    partial void OnUBICACIONChanged();
+    partial void OnPRIORIDAD_DOCChanging(string value);
+    partial void OnPRIORIDAD_DOCChanged();
+    partial void OnUBICACION_DOCChanging(string value);
+    partial void OnUBICACION_DOCChanged();
     partial void OnCREATEBY_DOCChanging(string value);
     partial void OnCREATEBY_DOCChanged();
     partial void OnUPDATEBY_DOCChanging(string value);
@@ -771,42 +806,42 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRIORIDAD", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PRIORIDAD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRIORIDAD_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PRIORIDAD_DOC
 		{
 			get
 			{
-				return this._PRIORIDAD;
+				return this._PRIORIDAD_DOC;
 			}
 			set
 			{
-				if ((this._PRIORIDAD != value))
+				if ((this._PRIORIDAD_DOC != value))
 				{
-					this.OnPRIORIDADChanging(value);
+					this.OnPRIORIDAD_DOCChanging(value);
 					this.SendPropertyChanging();
-					this._PRIORIDAD = value;
-					this.SendPropertyChanged("PRIORIDAD");
-					this.OnPRIORIDADChanged();
+					this._PRIORIDAD_DOC = value;
+					this.SendPropertyChanged("PRIORIDAD_DOC");
+					this.OnPRIORIDAD_DOCChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UBICACION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UBICACION
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UBICACION_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UBICACION_DOC
 		{
 			get
 			{
-				return this._UBICACION;
+				return this._UBICACION_DOC;
 			}
 			set
 			{
-				if ((this._UBICACION != value))
+				if ((this._UBICACION_DOC != value))
 				{
-					this.OnUBICACIONChanging(value);
+					this.OnUBICACION_DOCChanging(value);
 					this.SendPropertyChanging();
-					this._UBICACION = value;
-					this.SendPropertyChanged("UBICACION");
-					this.OnUBICACIONChanged();
+					this._UBICACION_DOC = value;
+					this.SendPropertyChanged("UBICACION_DOC");
+					this.OnUBICACION_DOCChanged();
 				}
 			}
 		}
@@ -954,6 +989,8 @@ namespace MicittApp.DataAccess
 		
 		private int _ID_DPTO;
 		
+		private string _NOMBRE_DPT;
+		
 		private string _DESCRIP;
 		
 		private int _ID_DIRECCION;
@@ -970,7 +1007,7 @@ namespace MicittApp.DataAccess
 		
 		private EntitySet<TBL_USUARIO> _TBL_USUARIOs;
 		
-		private EntityRef<TBL_DIRECCIONE> _TBL_DIRECCIONE;
+		private EntityRef<TBL_DIRECCION> _TBL_DIRECCION;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -978,6 +1015,8 @@ namespace MicittApp.DataAccess
     partial void OnCreated();
     partial void OnID_DPTOChanging(int value);
     partial void OnID_DPTOChanged();
+    partial void OnNOMBRE_DPTChanging(string value);
+    partial void OnNOMBRE_DPTChanged();
     partial void OnDESCRIPChanging(string value);
     partial void OnDESCRIPChanged();
     partial void OnID_DIRECCIONChanging(int value);
@@ -996,7 +1035,7 @@ namespace MicittApp.DataAccess
 		{
 			this._TBL_CONS_DPTs = new EntitySet<TBL_CONS_DPT>(new Action<TBL_CONS_DPT>(this.attach_TBL_CONS_DPTs), new Action<TBL_CONS_DPT>(this.detach_TBL_CONS_DPTs));
 			this._TBL_USUARIOs = new EntitySet<TBL_USUARIO>(new Action<TBL_USUARIO>(this.attach_TBL_USUARIOs), new Action<TBL_USUARIO>(this.detach_TBL_USUARIOs));
-			this._TBL_DIRECCIONE = default(EntityRef<TBL_DIRECCIONE>);
+			this._TBL_DIRECCION = default(EntityRef<TBL_DIRECCION>);
 			OnCreated();
 		}
 		
@@ -1016,6 +1055,26 @@ namespace MicittApp.DataAccess
 					this._ID_DPTO = value;
 					this.SendPropertyChanged("ID_DPTO");
 					this.OnID_DPTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DPT", DbType="VarChar(50)")]
+		public string NOMBRE_DPT
+		{
+			get
+			{
+				return this._NOMBRE_DPT;
+			}
+			set
+			{
+				if ((this._NOMBRE_DPT != value))
+				{
+					this.OnNOMBRE_DPTChanging(value);
+					this.SendPropertyChanging();
+					this._NOMBRE_DPT = value;
+					this.SendPropertyChanged("NOMBRE_DPT");
+					this.OnNOMBRE_DPTChanged();
 				}
 			}
 		}
@@ -1051,7 +1110,7 @@ namespace MicittApp.DataAccess
 			{
 				if ((this._ID_DIRECCION != value))
 				{
-					if (this._TBL_DIRECCIONE.HasLoadedOrAssignedValue)
+					if (this._TBL_DIRECCION.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1170,26 +1229,26 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_DIRECCIONE_TBL_DPT", Storage="_TBL_DIRECCIONE", ThisKey="ID_DIRECCION", OtherKey="ID_DIRECCION", IsForeignKey=true)]
-		public TBL_DIRECCIONE TBL_DIRECCIONE
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_DIRECCION_TBL_DPT", Storage="_TBL_DIRECCION", ThisKey="ID_DIRECCION", OtherKey="ID_DIRECCION", IsForeignKey=true)]
+		public TBL_DIRECCION TBL_DIRECCION
 		{
 			get
 			{
-				return this._TBL_DIRECCIONE.Entity;
+				return this._TBL_DIRECCION.Entity;
 			}
 			set
 			{
-				TBL_DIRECCIONE previousValue = this._TBL_DIRECCIONE.Entity;
+				TBL_DIRECCION previousValue = this._TBL_DIRECCION.Entity;
 				if (((previousValue != value) 
-							|| (this._TBL_DIRECCIONE.HasLoadedOrAssignedValue == false)))
+							|| (this._TBL_DIRECCION.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._TBL_DIRECCIONE.Entity = null;
+						this._TBL_DIRECCION.Entity = null;
 						previousValue.TBL_DPTs.Remove(this);
 					}
-					this._TBL_DIRECCIONE.Entity = value;
+					this._TBL_DIRECCION.Entity = value;
 					if ((value != null))
 					{
 						value.TBL_DPTs.Add(this);
@@ -1199,7 +1258,7 @@ namespace MicittApp.DataAccess
 					{
 						this._ID_DIRECCION = default(int);
 					}
-					this.SendPropertyChanged("TBL_DIRECCIONE");
+					this.SendPropertyChanged("TBL_DIRECCION");
 				}
 			}
 		}
@@ -1271,6 +1330,8 @@ namespace MicittApp.DataAccess
 		
 		private int _ID_DPTO;
 		
+		private string _PASSWORD_USER;
+		
 		private string _CREATEBY_USER;
 		
 		private string _UPDATEBY_USER;
@@ -1301,6 +1362,8 @@ namespace MicittApp.DataAccess
     partial void OnID_ROLEChanged();
     partial void OnID_DPTOChanging(int value);
     partial void OnID_DPTOChanged();
+    partial void OnPASSWORD_USERChanging(string value);
+    partial void OnPASSWORD_USERChanged();
     partial void OnCREATEBY_USERChanging(string value);
     partial void OnCREATEBY_USERChanged();
     partial void OnUPDATEBY_USERChanging(string value);
@@ -1481,6 +1544,26 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD_USER", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string PASSWORD_USER
+		{
+			get
+			{
+				return this._PASSWORD_USER;
+			}
+			set
+			{
+				if ((this._PASSWORD_USER != value))
+				{
+					this.OnPASSWORD_USERChanging(value);
+					this.SendPropertyChanging();
+					this._PASSWORD_USER = value;
+					this.SendPropertyChanged("PASSWORD_USER");
+					this.OnPASSWORD_USERChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY_USER", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string CREATEBY_USER
 		{
@@ -1612,6 +1695,496 @@ namespace MicittApp.DataAccess
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_DIRECCIONResult
+	{
+		
+		private int _ID_DIRECCION;
+		
+		private string _DESCRIP_DIR;
+		
+		public SP_CRUD_DIRECCIONResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DIRECCION", DbType="Int NOT NULL")]
+		public int ID_DIRECCION
+		{
+			get
+			{
+				return this._ID_DIRECCION;
+			}
+			set
+			{
+				if ((this._ID_DIRECCION != value))
+				{
+					this._ID_DIRECCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIP_DIR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string DESCRIP_DIR
+		{
+			get
+			{
+				return this._DESCRIP_DIR;
+			}
+			set
+			{
+				if ((this._DESCRIP_DIR != value))
+				{
+					this._DESCRIP_DIR = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_DPTOResult
+	{
+		
+		private int _ID_DPTO;
+		
+		private string _NOMBRE_DPT;
+		
+		private string _DESCRIP;
+		
+		private int _ID_DIRECCION;
+		
+		public SP_CRUD_DPTOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DPTO", DbType="Int NOT NULL")]
+		public int ID_DPTO
+		{
+			get
+			{
+				return this._ID_DPTO;
+			}
+			set
+			{
+				if ((this._ID_DPTO != value))
+				{
+					this._ID_DPTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DPT", DbType="VarChar(50)")]
+		public string NOMBRE_DPT
+		{
+			get
+			{
+				return this._NOMBRE_DPT;
+			}
+			set
+			{
+				if ((this._NOMBRE_DPT != value))
+				{
+					this._NOMBRE_DPT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIP", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string DESCRIP
+		{
+			get
+			{
+				return this._DESCRIP;
+			}
+			set
+			{
+				if ((this._DESCRIP != value))
+				{
+					this._DESCRIP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DIRECCION", DbType="Int NOT NULL")]
+		public int ID_DIRECCION
+		{
+			get
+			{
+				return this._ID_DIRECCION;
+			}
+			set
+			{
+				if ((this._ID_DIRECCION != value))
+				{
+					this._ID_DIRECCION = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_USUARIOResult
+	{
+		
+		private string _ID_USER;
+		
+		private string _NOMBREC_USER;
+		
+		private string _APELLIDO1_USER;
+		
+		private string _APELLIDO2_USER;
+		
+		private string _CORREO_USER;
+		
+		private string _TELEFONO_USER;
+		
+		private int _ID_ROLE;
+		
+		private int _ID_DPTO;
+		
+		private string _PASSWORD_USER;
+		
+		public SP_CRUD_USUARIOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string ID_USER
+		{
+			get
+			{
+				return this._ID_USER;
+			}
+			set
+			{
+				if ((this._ID_USER != value))
+				{
+					this._ID_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBREC_USER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NOMBREC_USER
+		{
+			get
+			{
+				return this._NOMBREC_USER;
+			}
+			set
+			{
+				if ((this._NOMBREC_USER != value))
+				{
+					this._NOMBREC_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO1_USER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string APELLIDO1_USER
+		{
+			get
+			{
+				return this._APELLIDO1_USER;
+			}
+			set
+			{
+				if ((this._APELLIDO1_USER != value))
+				{
+					this._APELLIDO1_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO2_USER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string APELLIDO2_USER
+		{
+			get
+			{
+				return this._APELLIDO2_USER;
+			}
+			set
+			{
+				if ((this._APELLIDO2_USER != value))
+				{
+					this._APELLIDO2_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO_USER", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string CORREO_USER
+		{
+			get
+			{
+				return this._CORREO_USER;
+			}
+			set
+			{
+				if ((this._CORREO_USER != value))
+				{
+					this._CORREO_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO_USER", DbType="VarChar(15)")]
+		public string TELEFONO_USER
+		{
+			get
+			{
+				return this._TELEFONO_USER;
+			}
+			set
+			{
+				if ((this._TELEFONO_USER != value))
+				{
+					this._TELEFONO_USER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ROLE", DbType="Int NOT NULL")]
+		public int ID_ROLE
+		{
+			get
+			{
+				return this._ID_ROLE;
+			}
+			set
+			{
+				if ((this._ID_ROLE != value))
+				{
+					this._ID_ROLE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DPTO", DbType="Int NOT NULL")]
+		public int ID_DPTO
+		{
+			get
+			{
+				return this._ID_DPTO;
+			}
+			set
+			{
+				if ((this._ID_DPTO != value))
+				{
+					this._ID_DPTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD_USER", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string PASSWORD_USER
+		{
+			get
+			{
+				return this._PASSWORD_USER;
+			}
+			set
+			{
+				if ((this._PASSWORD_USER != value))
+				{
+					this._PASSWORD_USER = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_CONS_DPTResult
+	{
+		
+		private string _ID_IDENTIFICADOR;
+		
+		private int _ID_DPTO;
+		
+		public SP_CRUD_CONS_DPTResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_IDENTIFICADOR", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string ID_IDENTIFICADOR
+		{
+			get
+			{
+				return this._ID_IDENTIFICADOR;
+			}
+			set
+			{
+				if ((this._ID_IDENTIFICADOR != value))
+				{
+					this._ID_IDENTIFICADOR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DPTO", DbType="Int NOT NULL")]
+		public int ID_DPTO
+		{
+			get
+			{
+				return this._ID_DPTO;
+			}
+			set
+			{
+				if ((this._ID_DPTO != value))
+				{
+					this._ID_DPTO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_DOCResult
+	{
+		
+		private int _ID_DOC;
+		
+		private string _ID_IDENTIFICADOR;
+		
+		private string _TITULO_DOC;
+		
+		private string _EMISOR_DOC;
+		
+		private string _DESTINATARIO_DOC;
+		
+		private System.DateTime _FECHA_DOC;
+		
+		private string _PRIORIDAD_DOC;
+		
+		private string _UBICACION_DOC;
+		
+		public SP_CRUD_DOCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DOC", DbType="Int NOT NULL")]
+		public int ID_DOC
+		{
+			get
+			{
+				return this._ID_DOC;
+			}
+			set
+			{
+				if ((this._ID_DOC != value))
+				{
+					this._ID_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_IDENTIFICADOR", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string ID_IDENTIFICADOR
+		{
+			get
+			{
+				return this._ID_IDENTIFICADOR;
+			}
+			set
+			{
+				if ((this._ID_IDENTIFICADOR != value))
+				{
+					this._ID_IDENTIFICADOR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TITULO_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TITULO_DOC
+		{
+			get
+			{
+				return this._TITULO_DOC;
+			}
+			set
+			{
+				if ((this._TITULO_DOC != value))
+				{
+					this._TITULO_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMISOR_DOC", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string EMISOR_DOC
+		{
+			get
+			{
+				return this._EMISOR_DOC;
+			}
+			set
+			{
+				if ((this._EMISOR_DOC != value))
+				{
+					this._EMISOR_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESTINATARIO_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string DESTINATARIO_DOC
+		{
+			get
+			{
+				return this._DESTINATARIO_DOC;
+			}
+			set
+			{
+				if ((this._DESTINATARIO_DOC != value))
+				{
+					this._DESTINATARIO_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_DOC", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHA_DOC
+		{
+			get
+			{
+				return this._FECHA_DOC;
+			}
+			set
+			{
+				if ((this._FECHA_DOC != value))
+				{
+					this._FECHA_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRIORIDAD_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PRIORIDAD_DOC
+		{
+			get
+			{
+				return this._PRIORIDAD_DOC;
+			}
+			set
+			{
+				if ((this._PRIORIDAD_DOC != value))
+				{
+					this._PRIORIDAD_DOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UBICACION_DOC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UBICACION_DOC
+		{
+			get
+			{
+				return this._UBICACION_DOC;
+			}
+			set
+			{
+				if ((this._UBICACION_DOC != value))
+				{
+					this._UBICACION_DOC = value;
+				}
 			}
 		}
 	}
