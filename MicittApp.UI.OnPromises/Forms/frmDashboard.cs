@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicittApp.UI.OnPromises.Panels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace MicittApp.UI.OnPromises.Forms
         public frmDashboard()
         {
             InitializeComponent();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            this.metroPanel2.Controls.Clear();
+            pnlUsers _pnlUsers = new pnlUsers(this);
+            this.metroPanel2.Controls.Add(_pnlUsers);
+            _pnlUsers.swipe();
+        }
+
+        private void btnDocs_Click(object sender, EventArgs e)
+        {
+            this.metroPanel2.Controls.Clear();
+            pnlDocs _pnlDocs = new pnlDocs(this);
+            this.metroPanel2.Controls.Add(_pnlDocs);
+            _pnlDocs.swipe();
         }
     }
 }
