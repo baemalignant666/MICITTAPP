@@ -65,6 +65,7 @@
             this.btnConsDocs.TabIndex = 7;
             this.btnConsDocs.Text = "Consecutivos";
             this.btnConsDocs.UseSelectable = true;
+            this.btnConsDocs.Click += new System.EventHandler(this.btnConsDocs_Click);
             // 
             // btnUsers
             // 
@@ -97,6 +98,7 @@
             this.btnDpts.TabIndex = 5;
             this.btnDpts.Text = "Departamentos";
             this.btnDpts.UseSelectable = true;
+            this.btnDpts.Click += new System.EventHandler(this.btnDpts_Click);
             // 
             // metroPanel2
             // 
@@ -121,6 +123,7 @@
             this.BtnDirs.TabIndex = 6;
             this.BtnDirs.Text = "Direcciones";
             this.BtnDirs.UseSelectable = true;
+            this.BtnDirs.Click += new System.EventHandler(this.BtnDirs_Click);
             // 
             // frmDashboard
             // 

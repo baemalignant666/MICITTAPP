@@ -33,5 +33,29 @@ namespace MicittApp.UI.OnPromises.Forms
             this.metroPanel2.Controls.Add(_pnlDocs);
             _pnlDocs.swipe();
         }
+
+        private void btnDpts_Click(object sender, EventArgs e)
+        {
+            this.metroPanel2.Controls.Clear();
+            pnlDpts _pnlDpts = new pnlDpts(this);
+            this.metroPanel2.Controls.Add(_pnlDpts);
+            _pnlDpts.swipe();
+        }
+
+        private void BtnDirs_Click(object sender, EventArgs e)
+        {
+            this.metroPanel2.Controls.Clear();
+            pnlDir _pnlDir = new pnlDir(this);
+            this.metroPanel2.Controls.Add(_pnlDir);
+            _pnlDir.swipe();
+        }
+
+        private void btnConsDocs_Click(object sender, EventArgs e)
+        {
+            this.metroPanel2.Controls.Clear();
+            pnlConsDpt _pnlConsDpt = new pnlConsDpt(this);
+            this.metroPanel2.Controls.Add(_pnlConsDpt);
+            _pnlConsDpt.swipe();
+        }
     }
 }

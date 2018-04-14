@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.btnCreate = new MetroFramework.Controls.MetroTile();
@@ -38,9 +38,20 @@
             this.btnUpdate = new MetroFramework.Controls.MetroTile();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.TabDocs = new MetroFramework.Controls.MetroTabPage();
+            this.cbCons = new MetroFramework.Controls.MetroComboBox();
+            this.lblCons = new MetroFramework.Controls.MetroLabel();
+            this.dtpDateDoc = new MetroFramework.Controls.MetroDateTime();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.lblDestinatario = new MetroFramework.Controls.MetroLabel();
-            this.dgvDocs = new MetroFramework.Controls.MetroGrid();
+            this.dgvDoc = new MetroFramework.Controls.MetroGrid();
+            this.ID_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TITULO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMISOR_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DEST_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UBI_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRIO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CONS_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbldatedoc = new MetroFramework.Controls.MetroLabel();
             this.cbRole = new MetroFramework.Controls.MetroComboBox();
             this.lblPriority = new MetroFramework.Controls.MetroLabel();
@@ -50,21 +61,10 @@
             this.lblEmisor = new MetroFramework.Controls.MetroLabel();
             this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
             this.lblTitulo = new MetroFramework.Controls.MetroLabel();
-            this.dtpDateDoc = new MetroFramework.Controls.MetroDateTime();
-            this.cbCons = new MetroFramework.Controls.MetroComboBox();
-            this.lblCons = new MetroFramework.Controls.MetroLabel();
-            this.ID_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TITULO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMISOR_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DEST_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UBI_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRIO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CONS_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
             this.TabDocs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -143,7 +143,7 @@
             this.TabDocs.Controls.Add(this.dtpDateDoc);
             this.TabDocs.Controls.Add(this.metroTextBox2);
             this.TabDocs.Controls.Add(this.lblDestinatario);
-            this.TabDocs.Controls.Add(this.dgvDocs);
+            this.TabDocs.Controls.Add(this.dgvDoc);
             this.TabDocs.Controls.Add(this.lbldatedoc);
             this.TabDocs.Controls.Add(this.cbRole);
             this.TabDocs.Controls.Add(this.lblPriority);
@@ -164,6 +164,34 @@
             this.TabDocs.VerticalScrollbarBarColor = true;
             this.TabDocs.VerticalScrollbarHighlightOnWheel = false;
             this.TabDocs.VerticalScrollbarSize = 10;
+            // 
+            // cbCons
+            // 
+            this.cbCons.FormattingEnabled = true;
+            this.cbCons.ItemHeight = 23;
+            this.cbCons.Location = new System.Drawing.Point(351, 81);
+            this.cbCons.Name = "cbCons";
+            this.cbCons.Size = new System.Drawing.Size(143, 29);
+            this.cbCons.TabIndex = 23;
+            this.cbCons.UseSelectable = true;
+            // 
+            // lblCons
+            // 
+            this.lblCons.AutoSize = true;
+            this.lblCons.Location = new System.Drawing.Point(266, 87);
+            this.lblCons.Name = "lblCons";
+            this.lblCons.Size = new System.Drawing.Size(79, 19);
+            this.lblCons.TabIndex = 22;
+            this.lblCons.Text = "Consecutivo";
+            // 
+            // dtpDateDoc
+            // 
+            this.dtpDateDoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateDoc.Location = new System.Drawing.Point(104, 100);
+            this.dtpDateDoc.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDateDoc.Name = "dtpDateDoc";
+            this.dtpDateDoc.Size = new System.Drawing.Size(143, 29);
+            this.dtpDateDoc.TabIndex = 21;
             // 
             // metroTextBox2
             // 
@@ -204,23 +232,23 @@
             this.lblDestinatario.TabIndex = 18;
             this.lblDestinatario.Text = "Destinatario";
             // 
-            // dgvDocs
+            // dgvDoc
             // 
-            this.dgvDocs.AllowUserToResizeRows = false;
-            this.dgvDocs.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDocs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDocs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvDocs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDocs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDoc.AllowUserToResizeRows = false;
+            this.dgvDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_DOC,
             this.TITULO_DOC,
             this.EMISOR_DOC,
@@ -229,32 +257,75 @@
             this.UBI_DOC,
             this.PRIO_DOC,
             this.CONS_DOC});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDocs.EnableHeadersVisualStyles = false;
-            this.dgvDocs.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvDocs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDocs.Location = new System.Drawing.Point(-4, 135);
-            this.dgvDocs.Name = "dgvDocs";
-            this.dgvDocs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocs.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDocs.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvDocs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocs.Size = new System.Drawing.Size(626, 224);
-            this.dgvDocs.TabIndex = 17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDoc.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDoc.EnableHeadersVisualStyles = false;
+            this.dgvDoc.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvDoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDoc.Location = new System.Drawing.Point(-4, 135);
+            this.dgvDoc.Name = "dgvDoc";
+            this.dgvDoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDoc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDoc.Size = new System.Drawing.Size(626, 224);
+            this.dgvDoc.TabIndex = 17;
+            // 
+            // ID_DOC
+            // 
+            this.ID_DOC.HeaderText = "ID";
+            this.ID_DOC.Name = "ID_DOC";
+            this.ID_DOC.Visible = false;
+            // 
+            // TITULO_DOC
+            // 
+            this.TITULO_DOC.HeaderText = "Titulo";
+            this.TITULO_DOC.Name = "TITULO_DOC";
+            // 
+            // EMISOR_DOC
+            // 
+            this.EMISOR_DOC.HeaderText = "Emisor";
+            this.EMISOR_DOC.Name = "EMISOR_DOC";
+            // 
+            // DEST_DOC
+            // 
+            this.DEST_DOC.HeaderText = "Destinatario";
+            this.DEST_DOC.Name = "DEST_DOC";
+            // 
+            // DATE_DOC
+            // 
+            this.DATE_DOC.HeaderText = "Fecha";
+            this.DATE_DOC.Name = "DATE_DOC";
+            // 
+            // UBI_DOC
+            // 
+            this.UBI_DOC.HeaderText = "Ubicación";
+            this.UBI_DOC.Name = "UBI_DOC";
+            // 
+            // PRIO_DOC
+            // 
+            this.PRIO_DOC.HeaderText = "Prioridad";
+            this.PRIO_DOC.Name = "PRIO_DOC";
+            this.PRIO_DOC.Width = 75;
+            // 
+            // CONS_DOC
+            // 
+            this.CONS_DOC.HeaderText = "Consecutivo";
+            this.CONS_DOC.Name = "CONS_DOC";
+            this.CONS_DOC.Width = 80;
             // 
             // lbldatedoc
             // 
@@ -401,77 +472,6 @@
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Titulo ";
             // 
-            // dtpDateDoc
-            // 
-            this.dtpDateDoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateDoc.Location = new System.Drawing.Point(104, 100);
-            this.dtpDateDoc.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpDateDoc.Name = "dtpDateDoc";
-            this.dtpDateDoc.Size = new System.Drawing.Size(143, 29);
-            this.dtpDateDoc.TabIndex = 21;
-            // 
-            // cbCons
-            // 
-            this.cbCons.FormattingEnabled = true;
-            this.cbCons.ItemHeight = 23;
-            this.cbCons.Location = new System.Drawing.Point(351, 81);
-            this.cbCons.Name = "cbCons";
-            this.cbCons.Size = new System.Drawing.Size(143, 29);
-            this.cbCons.TabIndex = 23;
-            this.cbCons.UseSelectable = true;
-            // 
-            // lblCons
-            // 
-            this.lblCons.AutoSize = true;
-            this.lblCons.Location = new System.Drawing.Point(266, 87);
-            this.lblCons.Name = "lblCons";
-            this.lblCons.Size = new System.Drawing.Size(79, 19);
-            this.lblCons.TabIndex = 22;
-            this.lblCons.Text = "Consecutivo";
-            // 
-            // ID_DOC
-            // 
-            this.ID_DOC.HeaderText = "ID";
-            this.ID_DOC.Name = "ID_DOC";
-            this.ID_DOC.Visible = false;
-            // 
-            // TITULO_DOC
-            // 
-            this.TITULO_DOC.HeaderText = "Titulo";
-            this.TITULO_DOC.Name = "TITULO_DOC";
-            // 
-            // EMISOR_DOC
-            // 
-            this.EMISOR_DOC.HeaderText = "Emisor";
-            this.EMISOR_DOC.Name = "EMISOR_DOC";
-            // 
-            // DEST_DOC
-            // 
-            this.DEST_DOC.HeaderText = "Destinatario";
-            this.DEST_DOC.Name = "DEST_DOC";
-            // 
-            // DATE_DOC
-            // 
-            this.DATE_DOC.HeaderText = "Fecha";
-            this.DATE_DOC.Name = "DATE_DOC";
-            // 
-            // UBI_DOC
-            // 
-            this.UBI_DOC.HeaderText = "Ubicación";
-            this.UBI_DOC.Name = "UBI_DOC";
-            // 
-            // PRIO_DOC
-            // 
-            this.PRIO_DOC.HeaderText = "Prioridad";
-            this.PRIO_DOC.Name = "PRIO_DOC";
-            this.PRIO_DOC.Width = 75;
-            // 
-            // CONS_DOC
-            // 
-            this.CONS_DOC.HeaderText = "Consecutivo";
-            this.CONS_DOC.Name = "CONS_DOC";
-            this.CONS_DOC.Width = 80;
-            // 
             // pnlDocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,7 +484,7 @@
             this.metroTabControl.ResumeLayout(false);
             this.TabDocs.ResumeLayout(false);
             this.TabDocs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +500,7 @@
         private MetroFramework.Controls.MetroTabPage TabDocs;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroLabel lblDestinatario;
-        private MetroFramework.Controls.MetroGrid dgvDocs;
+        private MetroFramework.Controls.MetroGrid dgvDoc;
         private MetroFramework.Controls.MetroLabel lbldatedoc;
         private MetroFramework.Controls.MetroComboBox cbRole;
         private MetroFramework.Controls.MetroLabel lblPriority;

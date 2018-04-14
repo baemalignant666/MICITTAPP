@@ -68,11 +68,29 @@
     <Compile Include="Forms\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\pnlConsDpt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\pnlConsDpt.Designer.cs">
+      <DependentUpon>pnlConsDpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\pnlDir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\pnlDir.Designer.cs">
+      <DependentUpon>pnlDir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\pnlDocs.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Panels\pnlDocs.Designer.cs">
       <DependentUpon>pnlDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\pnlDpts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\pnlDpts.Designer.cs">
+      <DependentUpon>pnlDpts.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\pnlSlider.cs">
       <SubType>UserControl</SubType>
@@ -91,8 +109,17 @@
     <EmbeddedResource Include="Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\pnlConsDpt.resx">
+      <DependentUpon>pnlConsDpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\pnlDir.resx">
+      <DependentUpon>pnlDir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\pnlDocs.resx">
       <DependentUpon>pnlDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\pnlDpts.resx">
+      <DependentUpon>pnlDpts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\pnlUsers.resx">
       <DependentUpon>pnlUsers.cs</DependentUpon>

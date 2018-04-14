@@ -27,7 +27,7 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public List<T> RetrieveAlDireccion<T>()
+        public List<T> RetrieveAllDireccion<T>()
         {
             var lst = new List<T>();
             try
@@ -57,7 +57,7 @@ namespace MicittApp.ApiCore.Management
                 throw ex;
             }
         }
-        public void DeleteDDireccion(Direccion Obj)
+        public void DeleteDireccion(Direccion Obj)
         {
             try
             {

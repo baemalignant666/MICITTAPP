@@ -12,6 +12,11 @@ namespace MicittApp.UI.OnPromises
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static class MystaticValues
+        {
+            public static string IdSession = "186200492318";
+        }
         [STAThread]
         static void Main()
         {
