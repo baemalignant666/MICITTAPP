@@ -49,6 +49,8 @@
             this.lbDescripDpt = new MetroFramework.Controls.MetroLabel();
             this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
             this.lblNameDpt = new MetroFramework.Controls.MetroLabel();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
+            this.lblSearch = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
             this.TabDocs.SuspendLayout();
@@ -57,6 +59,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.txtSearch);
+            this.metroPanel1.Controls.Add(this.lblSearch);
             this.metroPanel1.Controls.Add(this.btnDelete);
             this.metroPanel1.Controls.Add(this.btnCreate);
             this.metroPanel1.Controls.Add(this.btnRefresh);
@@ -113,6 +117,7 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // metroTabControl
             // 
@@ -312,6 +317,45 @@
             this.lblNameDpt.TabIndex = 2;
             this.lblNameDpt.Text = "Nombre";
             // 
+            // txtSearch
+            // 
+            // 
+            // 
+            // 
+            this.txtSearch.CustomButton.Image = null;
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtSearch.CustomButton.Name = "";
+            this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearch.CustomButton.TabIndex = 1;
+            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearch.CustomButton.UseSelectable = true;
+            this.txtSearch.CustomButton.Visible = false;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(479, 40);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(143, 23);
+            this.txtSearch.TabIndex = 12;
+            this.txtSearch.UseSelectable = true;
+            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(426, 44);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(47, 19);
+            this.lblSearch.TabIndex = 11;
+            this.lblSearch.Text = "Buscar";
+            // 
             // pnlDpts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +365,7 @@
             this.Name = "pnlDpts";
             this.Size = new System.Drawing.Size(626, 469);
             this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.metroTabControl.ResumeLayout(false);
             this.TabDocs.ResumeLayout(false);
             this.TabDocs.PerformLayout();
@@ -349,5 +394,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_DPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIP_DPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_DIRECCION;
+        private MetroFramework.Controls.MetroTextBox txtSearch;
+        private MetroFramework.Controls.MetroLabel lblSearch;
     }
 }

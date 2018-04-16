@@ -13,6 +13,9 @@ namespace MicittApp.Entities.Objects
         public string Descrip_Dtpo { get; set; }
         
         public int Id_Direccion { get; set; }
+        public string Descrip_Dir { get; set; }
+        
+
         public Departamento()
         {
             Id_Dtpo = 0;
@@ -26,6 +29,13 @@ namespace MicittApp.Entities.Objects
             this.Nombre_Dtpo = pNombre_Dpto;
             this.Descrip_Dtpo = pDescrip_Dtpo;
             this.Id_Direccion = pId_Direccion;
+        }
+        public Departamento(int pId_Dtpo, string pNombre_Dpto, string pDescrip_Dtpo, string pDescrip_Dir)
+        {
+            this.Id_Dtpo = pId_Dtpo;
+            this.Nombre_Dtpo = pNombre_Dpto;
+            this.Descrip_Dtpo = pDescrip_Dtpo;
+            this.Descrip_Dir = pDescrip_Dir;
         }
         public Departamento(int pId_Dtpo, string pNombre_Dpto, string pDescrip_Dtpo, int pId_Direccion, bool pState, 
             string pCreateby, string pUpdateby, DateTime pCreateDate)

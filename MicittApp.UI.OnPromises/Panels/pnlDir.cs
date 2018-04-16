@@ -20,10 +20,10 @@ namespace MicittApp.UI.OnPromises.Panels
         DireccionManagement ApiAccess = new DireccionManagement();
         Direccion ObjDir = new Direccion();
         string IdSession = MystaticValues.IdSession;
-        
         public pnlDir(Form owner) : base(owner)
         {
             InitializeComponent();
+            LoadDataGrid();
         }
         //Managament Methods
         private void LoadDataGrid()
@@ -46,11 +46,6 @@ namespace MicittApp.UI.OnPromises.Panels
             }
 
         }
-        //Validation Methods
-        private void CleanFields()
-        {
-            txtDescripDir.Text = "";
-        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var NameDir = txtDescripDir.Text;
@@ -63,6 +58,7 @@ namespace MicittApp.UI.OnPromises.Panels
             {
                 try
                 {
+
                     ObjDir.Descrip_Dir = NameDir;
                     ObjDir.Createby = IdSession;
                     ApiAccess.CreateDireccion(ObjDir);
@@ -91,7 +87,7 @@ namespace MicittApp.UI.OnPromises.Panels
                     ObjDir.Id_Dir = Convert.ToInt32(dgvDir[0, Row].Value);
                     ObjDir.Descrip_Dir = NameDir;
                     ObjDir.Updateby = IdSession;
-                    ApiAccess.CreateDireccion(ObjDir);
+                    ApiAccess.UpdateDireccion(ObjDir);
                 }
                 catch (Exception)
                 {
@@ -104,7 +100,7 @@ namespace MicittApp.UI.OnPromises.Panels
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var NameDir = txtDescripDir.Text;
-            if (MetroFramework.MetroMessageBox.Show(this, "¿Desea Eliminar la Dirección: " + NameDir + "?", "Confirmación de Acción", 
+            if (MetroFramework.MetroMessageBox.Show(this, "¿Desea Eliminar la Dirección: " + NameDir + "?", "Confirmación de Acción",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
@@ -122,5 +118,33 @@ namespace MicittApp.UI.OnPromises.Panels
                 LoadDataGrid();
             }
         }
+        private void dgvDir_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+                int Row = dgvDir.CurrentRow.Index;
+                var IdDir = dgvDir[0, Row].Value;
+                txtDescripDir.Text = dgvDir[1, Row].Value.ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDataGrid();
+            CleanFields();
+        }
+        //Validation Methods
+        private void CleanFields()
+        {
+            txtDescripDir.Text = "";
+        }
+       
     }
 }

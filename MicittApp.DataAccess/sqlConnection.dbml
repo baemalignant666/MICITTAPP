@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBMICITT" Class="sqlConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=DBMICITT;Persist Security Info=True;User ID=sa" SettingsObjectName="MicittApp.DataAccess.Properties.Settings" SettingsPropertyName="DBMICITTConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=DBMICITT;Integrated Security=True" SettingsObjectName="MicittApp.DataAccess.Properties.Settings" SettingsPropertyName="DBMICITTConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TBL_CONS_DPTS" Member="TBL_CONS_DPTs">
     <Type Name="TBL_CONS_DPT">
       <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,17 +10,6 @@
       <Column Name="CREATEDATE_CONS_DPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="TBL_CONS_DPT_TBL_DOC" Member="TBL_DOCs" ThisKey="ID_IDENTIFICADOR" OtherKey="ID_IDENTIFICADOR" Type="TBL_DOC" />
       <Association Name="TBL_DPT_TBL_CONS_DPT" Member="TBL_DPT" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_DPT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBL_DIRECCIONES" Member="TBL_DIRECCIONs">
-    <Type Name="TBL_DIRECCION">
-      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CREATEBY_DIR" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="UPDATEBY_DIR" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="STATE_DIR" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="CREATEDATE_DIR" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_DIRECCION_TBL_DPT" Member="TBL_DPTs" ThisKey="ID_DIRECCION" OtherKey="ID_DIRECCION" Type="TBL_DPT" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_DOCS" Member="TBL_DOCs">
@@ -73,30 +62,17 @@
       <Association Name="TBL_DPT_TBL_USUARIO" Member="TBL_DPT" ThisKey="ID_DPTO" OtherKey="ID_DPTO" Type="TBL_DPT" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.SP_CRUD_DIRECCION" Method="SP_CRUD_DIRECCION">
-    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pID_DIRECCION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pDESCRIP_DIR" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="SP_CRUD_DIRECCIONResult">
-      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.TBL_DIRECCIONES" Member="TBL_DIRECCIONs">
+    <Type Name="TBL_DIRECCION">
+      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.SP_CRUD_DPTO" Method="SP_CRUD_DPTO">
-    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pNOMBRE_DPT" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="pDESCRIP_DPT" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="pID_DIRECCION" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_CRUD_DPTOResult">
-      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
+      <Column Name="CREATEBY_DIR" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_DIR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="STATE_DIR" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_DIR" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_DIRECCION_TBL_DPT" Member="TBL_DPTs" ThisKey="ID_DIRECCION" OtherKey="ID_DIRECCION" Type="TBL_DPT" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_CRUD_USUARIO" Method="SP_CRUD_USUARIO">
     <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
     <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
@@ -121,16 +97,6 @@
       <Column Name="PASSWORD_USER" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_CRUD_CONS_DPT" Method="SP_CRUD_CONS_DPT">
-    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_CRUD_CONS_DPTResult">
-      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_CRUD_DOC" Method="SP_CRUD_DOC">
     <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
     <Parameter Name="pID_DOC" Type="System.Int32" DbType="Int" />
@@ -151,6 +117,40 @@
       <Column Name="FECHA_DOC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="PRIORIDAD_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UBICACION_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_CONS_DPT" Method="SP_CRUD_CONS_DPT">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CRUD_CONS_DPTResult">
+      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_DIRECCION" Method="SP_CRUD_DIRECCION">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pID_DIRECCION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pDESCRIP_DIR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_CRUD_DIRECCIONResult">
+      <Column Name="ID_DIRECCION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_DPTO" Method="SP_CRUD_DPTO">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pNOMBRE_DPT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pDESCRIP_DPT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_DIRECCION" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CRUD_DPTOResult">
+      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

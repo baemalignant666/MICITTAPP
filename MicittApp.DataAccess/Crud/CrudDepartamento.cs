@@ -31,7 +31,7 @@ namespace MicittApp.DataAccess.Crud
                 Obj.Id_Direccion).ToList();
             foreach (SP_CRUD_DPTOResult Element in Query)
             {
-                Departamento ObjDpto = new Departamento(Element.ID_DPTO,Element.NOMBRE_DPT,Element.DESCRIP,Element.ID_DIRECCION);
+                Departamento ObjDpto = new Departamento(Element.ID_DPTO,Element.NOMBRE_DPT,Element.DESCRIP,Element.DESCRIP_DIR);
                 MyList.Add(ObjDpto);
             }
             if (MyList.Count > 0)
