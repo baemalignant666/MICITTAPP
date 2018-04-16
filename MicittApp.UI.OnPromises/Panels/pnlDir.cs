@@ -145,6 +145,5 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             txtDescripDir.Text = "";
         }
-       
     }
 }

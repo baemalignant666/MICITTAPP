@@ -131,13 +131,6 @@ namespace MicittApp.DataAccess
 			return ((ISingleResult<SP_CRUD_DOCResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_CONS_DPT")]
-		public ISingleResult<SP_CRUD_CONS_DPTResult> SP_CRUD_CONS_DPT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string pID_IDENTIFICADOR, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_IDENTIFICADOR, pID_DPTO);
-			return ((ISingleResult<SP_CRUD_CONS_DPTResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_DIRECCION")]
 		public ISingleResult<SP_CRUD_DIRECCIONResult> SP_CRUD_DIRECCION([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DIRECCION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pDESCRIP_DIR)
 		{
@@ -150,6 +143,13 @@ namespace MicittApp.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_DPTO, pNOMBRE_DPT, pDESCRIP_DPT, pID_DIRECCION);
 			return ((ISingleResult<SP_CRUD_DPTOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_CONS_DPT")]
+		public ISingleResult<SP_CRUD_CONS_DPTResult> SP_CRUD_CONS_DPT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string pID_IDENTIFICADOR, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_IDENTIFICADOR, pID_DPTO);
+			return ((ISingleResult<SP_CRUD_CONS_DPTResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2021,50 +2021,6 @@ namespace MicittApp.DataAccess
 		}
 	}
 	
-	public partial class SP_CRUD_CONS_DPTResult
-	{
-		
-		private string _ID_IDENTIFICADOR;
-		
-		private string _DESCRIP;
-		
-		public SP_CRUD_CONS_DPTResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_IDENTIFICADOR", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string ID_IDENTIFICADOR
-		{
-			get
-			{
-				return this._ID_IDENTIFICADOR;
-			}
-			set
-			{
-				if ((this._ID_IDENTIFICADOR != value))
-				{
-					this._ID_IDENTIFICADOR = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIP", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string DESCRIP
-		{
-			get
-			{
-				return this._DESCRIP;
-			}
-			set
-			{
-				if ((this._DESCRIP != value))
-				{
-					this._DESCRIP = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_CRUD_DIRECCIONResult
 	{
 		
@@ -2184,6 +2140,50 @@ namespace MicittApp.DataAccess
 				if ((this._DESCRIP_DIR != value))
 				{
 					this._DESCRIP_DIR = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CRUD_CONS_DPTResult
+	{
+		
+		private string _ID_IDENTIFICADOR;
+		
+		private string _NOMBRE_DPT;
+		
+		public SP_CRUD_CONS_DPTResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_IDENTIFICADOR", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string ID_IDENTIFICADOR
+		{
+			get
+			{
+				return this._ID_IDENTIFICADOR;
+			}
+			set
+			{
+				if ((this._ID_IDENTIFICADOR != value))
+				{
+					this._ID_IDENTIFICADOR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DPT", DbType="VarChar(50)")]
+		public string NOMBRE_DPT
+		{
+			get
+			{
+				return this._NOMBRE_DPT;
+			}
+			set
+			{
+				if ((this._NOMBRE_DPT != value))
+				{
+					this._NOMBRE_DPT = value;
 				}
 			}
 		}

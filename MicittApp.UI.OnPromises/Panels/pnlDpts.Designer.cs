@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
+            this.lblSearch = new MetroFramework.Controls.MetroLabel();
             this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.btnCreate = new MetroFramework.Controls.MetroTile();
             this.btnRefresh = new MetroFramework.Controls.MetroTile();
@@ -43,14 +45,12 @@
             this.NOMBRE_DPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIP_DPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbDpto = new MetroFramework.Controls.MetroComboBox();
+            this.cbDir = new MetroFramework.Controls.MetroComboBox();
             this.lblDirDpt = new MetroFramework.Controls.MetroLabel();
-            this.txtLastname = new MetroFramework.Controls.MetroTextBox();
+            this.txtDescripDpt = new MetroFramework.Controls.MetroTextBox();
             this.lbDescripDpt = new MetroFramework.Controls.MetroLabel();
-            this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
+            this.txtNameDpt = new MetroFramework.Controls.MetroTextBox();
             this.lblNameDpt = new MetroFramework.Controls.MetroLabel();
-            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-            this.lblSearch = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
             this.TabDocs.SuspendLayout();
@@ -77,6 +77,45 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // txtSearch
+            // 
+            // 
+            // 
+            // 
+            this.txtSearch.CustomButton.Image = null;
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtSearch.CustomButton.Name = "";
+            this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearch.CustomButton.TabIndex = 1;
+            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearch.CustomButton.UseSelectable = true;
+            this.txtSearch.CustomButton.Visible = false;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(479, 40);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(143, 23);
+            this.txtSearch.TabIndex = 12;
+            this.txtSearch.UseSelectable = true;
+            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(426, 44);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(47, 19);
+            this.lblSearch.TabIndex = 11;
+            this.lblSearch.Text = "Buscar";
+            // 
             // btnDelete
             // 
             this.btnDelete.ActiveControl = null;
@@ -86,6 +125,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreate
             // 
@@ -133,11 +173,11 @@
             // TabDocs
             // 
             this.TabDocs.Controls.Add(this.dgvDpt);
-            this.TabDocs.Controls.Add(this.cbDpto);
+            this.TabDocs.Controls.Add(this.cbDir);
             this.TabDocs.Controls.Add(this.lblDirDpt);
-            this.TabDocs.Controls.Add(this.txtLastname);
+            this.TabDocs.Controls.Add(this.txtDescripDpt);
             this.TabDocs.Controls.Add(this.lbDescripDpt);
-            this.TabDocs.Controls.Add(this.txtNameUser);
+            this.TabDocs.Controls.Add(this.txtNameDpt);
             this.TabDocs.Controls.Add(this.lblNameDpt);
             this.TabDocs.HorizontalScrollbarBarColor = true;
             this.TabDocs.HorizontalScrollbarHighlightOnWheel = false;
@@ -198,6 +238,7 @@
             this.dgvDpt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDpt.Size = new System.Drawing.Size(626, 224);
             this.dgvDpt.TabIndex = 17;
+            this.dgvDpt.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDpt_CellClick);
             // 
             // ID_DPTO
             // 
@@ -220,15 +261,15 @@
             this.ID_DIRECCION.HeaderText = "Direccion";
             this.ID_DIRECCION.Name = "ID_DIRECCION";
             // 
-            // cbDpto
+            // cbDir
             // 
-            this.cbDpto.FormattingEnabled = true;
-            this.cbDpto.ItemHeight = 23;
-            this.cbDpto.Location = new System.Drawing.Point(104, 71);
-            this.cbDpto.Name = "cbDpto";
-            this.cbDpto.Size = new System.Drawing.Size(143, 29);
-            this.cbDpto.TabIndex = 14;
-            this.cbDpto.UseSelectable = true;
+            this.cbDir.FormattingEnabled = true;
+            this.cbDir.ItemHeight = 23;
+            this.cbDir.Location = new System.Drawing.Point(104, 71);
+            this.cbDir.Name = "cbDir";
+            this.cbDir.Size = new System.Drawing.Size(143, 29);
+            this.cbDir.TabIndex = 14;
+            this.cbDir.UseSelectable = true;
             // 
             // lblDirDpt
             // 
@@ -239,35 +280,35 @@
             this.lblDirDpt.TabIndex = 13;
             this.lblDirDpt.Text = "Dirección";
             // 
-            // txtLastname
+            // txtDescripDpt
             // 
             // 
             // 
             // 
-            this.txtLastname.CustomButton.Image = null;
-            this.txtLastname.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtLastname.CustomButton.Name = "";
-            this.txtLastname.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLastname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLastname.CustomButton.TabIndex = 1;
-            this.txtLastname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLastname.CustomButton.UseSelectable = true;
-            this.txtLastname.CustomButton.Visible = false;
-            this.txtLastname.Lines = new string[0];
-            this.txtLastname.Location = new System.Drawing.Point(104, 42);
-            this.txtLastname.MaxLength = 32767;
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.PasswordChar = '\0';
-            this.txtLastname.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLastname.SelectedText = "";
-            this.txtLastname.SelectionLength = 0;
-            this.txtLastname.SelectionStart = 0;
-            this.txtLastname.ShortcutsEnabled = true;
-            this.txtLastname.Size = new System.Drawing.Size(143, 23);
-            this.txtLastname.TabIndex = 5;
-            this.txtLastname.UseSelectable = true;
-            this.txtLastname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLastname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripDpt.CustomButton.Image = null;
+            this.txtDescripDpt.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtDescripDpt.CustomButton.Name = "";
+            this.txtDescripDpt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDescripDpt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDescripDpt.CustomButton.TabIndex = 1;
+            this.txtDescripDpt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDescripDpt.CustomButton.UseSelectable = true;
+            this.txtDescripDpt.CustomButton.Visible = false;
+            this.txtDescripDpt.Lines = new string[0];
+            this.txtDescripDpt.Location = new System.Drawing.Point(104, 42);
+            this.txtDescripDpt.MaxLength = 32767;
+            this.txtDescripDpt.Name = "txtDescripDpt";
+            this.txtDescripDpt.PasswordChar = '\0';
+            this.txtDescripDpt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDescripDpt.SelectedText = "";
+            this.txtDescripDpt.SelectionLength = 0;
+            this.txtDescripDpt.SelectionStart = 0;
+            this.txtDescripDpt.ShortcutsEnabled = true;
+            this.txtDescripDpt.Size = new System.Drawing.Size(143, 23);
+            this.txtDescripDpt.TabIndex = 5;
+            this.txtDescripDpt.UseSelectable = true;
+            this.txtDescripDpt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDescripDpt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lbDescripDpt
             // 
@@ -278,35 +319,35 @@
             this.lbDescripDpt.TabIndex = 4;
             this.lbDescripDpt.Text = "Descripción";
             // 
-            // txtNameUser
+            // txtNameDpt
             // 
             // 
             // 
             // 
-            this.txtNameUser.CustomButton.Image = null;
-            this.txtNameUser.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtNameUser.CustomButton.Name = "";
-            this.txtNameUser.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNameUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNameUser.CustomButton.TabIndex = 1;
-            this.txtNameUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNameUser.CustomButton.UseSelectable = true;
-            this.txtNameUser.CustomButton.Visible = false;
-            this.txtNameUser.Lines = new string[0];
-            this.txtNameUser.Location = new System.Drawing.Point(104, 13);
-            this.txtNameUser.MaxLength = 32767;
-            this.txtNameUser.Name = "txtNameUser";
-            this.txtNameUser.PasswordChar = '\0';
-            this.txtNameUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNameUser.SelectedText = "";
-            this.txtNameUser.SelectionLength = 0;
-            this.txtNameUser.SelectionStart = 0;
-            this.txtNameUser.ShortcutsEnabled = true;
-            this.txtNameUser.Size = new System.Drawing.Size(143, 23);
-            this.txtNameUser.TabIndex = 3;
-            this.txtNameUser.UseSelectable = true;
-            this.txtNameUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNameUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNameDpt.CustomButton.Image = null;
+            this.txtNameDpt.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtNameDpt.CustomButton.Name = "";
+            this.txtNameDpt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNameDpt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNameDpt.CustomButton.TabIndex = 1;
+            this.txtNameDpt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNameDpt.CustomButton.UseSelectable = true;
+            this.txtNameDpt.CustomButton.Visible = false;
+            this.txtNameDpt.Lines = new string[0];
+            this.txtNameDpt.Location = new System.Drawing.Point(104, 13);
+            this.txtNameDpt.MaxLength = 32767;
+            this.txtNameDpt.Name = "txtNameDpt";
+            this.txtNameDpt.PasswordChar = '\0';
+            this.txtNameDpt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNameDpt.SelectedText = "";
+            this.txtNameDpt.SelectionLength = 0;
+            this.txtNameDpt.SelectionStart = 0;
+            this.txtNameDpt.ShortcutsEnabled = true;
+            this.txtNameDpt.Size = new System.Drawing.Size(143, 23);
+            this.txtNameDpt.TabIndex = 3;
+            this.txtNameDpt.UseSelectable = true;
+            this.txtNameDpt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNameDpt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lblNameDpt
             // 
@@ -316,45 +357,6 @@
             this.lblNameDpt.Size = new System.Drawing.Size(59, 19);
             this.lblNameDpt.TabIndex = 2;
             this.lblNameDpt.Text = "Nombre";
-            // 
-            // txtSearch
-            // 
-            // 
-            // 
-            // 
-            this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtSearch.CustomButton.Name = "";
-            this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSearch.CustomButton.TabIndex = 1;
-            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSearch.CustomButton.UseSelectable = true;
-            this.txtSearch.CustomButton.Visible = false;
-            this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(479, 40);
-            this.txtSearch.MaxLength = 32767;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.SelectionLength = 0;
-            this.txtSearch.SelectionStart = 0;
-            this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(143, 23);
-            this.txtSearch.TabIndex = 12;
-            this.txtSearch.UseSelectable = true;
-            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(426, 44);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(47, 19);
-            this.lblSearch.TabIndex = 11;
-            this.lblSearch.Text = "Buscar";
             // 
             // pnlDpts
             // 
@@ -384,11 +386,11 @@
         private MetroFramework.Controls.MetroTabControl metroTabControl;
         private MetroFramework.Controls.MetroTabPage TabDocs;
         private MetroFramework.Controls.MetroGrid dgvDpt;
-        private MetroFramework.Controls.MetroComboBox cbDpto;
+        private MetroFramework.Controls.MetroComboBox cbDir;
         private MetroFramework.Controls.MetroLabel lblDirDpt;
-        private MetroFramework.Controls.MetroTextBox txtLastname;
+        private MetroFramework.Controls.MetroTextBox txtDescripDpt;
         private MetroFramework.Controls.MetroLabel lbDescripDpt;
-        private MetroFramework.Controls.MetroTextBox txtNameUser;
+        private MetroFramework.Controls.MetroTextBox txtNameDpt;
         private MetroFramework.Controls.MetroLabel lblNameDpt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_DPTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_DPT;

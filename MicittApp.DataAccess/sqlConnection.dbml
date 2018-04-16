@@ -119,16 +119,6 @@
       <Column Name="UBICACION_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_CRUD_CONS_DPT" Method="SP_CRUD_CONS_DPT">
-    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_CRUD_CONS_DPTResult">
-      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_CRUD_DIRECCION" Method="SP_CRUD_DIRECCION">
     <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
     <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
@@ -151,6 +141,16 @@
       <Column Name="NOMBRE_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DESCRIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DESCRIP_DIR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_CONS_DPT" Method="SP_CRUD_CONS_DPT">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CRUD_CONS_DPTResult">
+      <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

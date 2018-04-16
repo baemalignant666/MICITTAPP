@@ -41,7 +41,7 @@ namespace MicittApp.UI.OnPromises.Panels
                 foreach (Consecutivo element in ListCons)
                 {
                     string[] Row;
-                    Row = new string[] { element.Id_Identificador, element.Descrip_Dpto };
+                    Row = new string[] { element.Id_Identificador, element.Name_Dpto};
                     dgvCons.Rows.Add(Row);
                 }
             }
@@ -59,7 +59,7 @@ namespace MicittApp.UI.OnPromises.Panels
                 var ListDpt = ApiAccessDpt.RetrieveAllDepartamento<Departamento>();
                 foreach (Departamento element in ListDpt)
                 {
-                    cb.Items.Add(element.Descrip_Dtpo);
+                    cb.Items.Add(element.Nombre_Dtpo);
                 }
             }
             catch (Exception)
@@ -73,12 +73,12 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             try
             {
-                var DescripDpt = cbDpto.Text;
+                var NameDpt = cbDpto.Text;
                 int IdDpt = 0;
                 var ListDpt = ApiAccessDpt.RetrieveAllDepartamento<Departamento>();
                 foreach (Departamento element in ListDpt)
                 {
-                    if (DescripDpt == element.Descrip_Dtpo)
+                    if (NameDpt == element.Nombre_Dtpo)
                     {
                         IdDpt = element.Id_Dtpo;
                         break;
@@ -184,6 +184,29 @@ namespace MicittApp.UI.OnPromises.Panels
                 CleanFields();
                 LoadDataGrid();
             }
+        }
+        private void dgvCons_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+                int Row = dgvCons.CurrentRow.Index;
+                txtCons.Text = dgvCons[0, Row].Value.ToString();
+                cbDpto.Text = dgvCons[1, Row].Value.ToString();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDataGrid();
+            LoadCbDpt(cbDpto);
+            CleanFields();
         }
     }
 }

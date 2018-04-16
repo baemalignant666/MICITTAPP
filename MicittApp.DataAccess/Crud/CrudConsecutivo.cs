@@ -32,7 +32,7 @@ namespace MicittApp.DataAccess.Crud
             foreach(SP_CRUD_CONS_DPTResult Element in Query)
             {
 
-                Consecutivo ObjConsecutivo = new Consecutivo(Element.ID_IDENTIFICADOR,Element.DESCRIP);
+                Consecutivo ObjConsecutivo = new Consecutivo(Element.ID_IDENTIFICADOR,Element.NOMBRE_DPT);
                 MyList.Add(ObjConsecutivo);
             }
             if (MyList.Count > 0)

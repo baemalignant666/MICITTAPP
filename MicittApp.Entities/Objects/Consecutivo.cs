@@ -10,7 +10,7 @@ namespace MicittApp.Entities.Objects
     {
         public string Id_Identificador { get; set; }
         public int Id_Dpto { get; set; }
-        public string Descrip_Dpto { get; set; }
+        public string Name_Dpto { get; set; }
         public Consecutivo()
         {
             Id_Identificador = "N/A";
@@ -21,10 +21,10 @@ namespace MicittApp.Entities.Objects
             this.Id_Identificador = pId_Identificador;
             this.Id_Dpto = pId_Dpto;
         }
-        public Consecutivo(string pId_Identificador, string pDescrip_Dpto)
+        public Consecutivo(string pId_Identificador, string pName_Dpto)
         {
             this.Id_Identificador = pId_Identificador;
-            this.Descrip_Dpto = pDescrip_Dpto;
+            this.Name_Dpto = pName_Dpto;
 
         }
         public Consecutivo(string pId_Identificador, int pId_Dpto, bool pState,
