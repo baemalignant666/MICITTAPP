@@ -119,7 +119,7 @@
             // btnDelete
             // 
             this.btnDelete.ActiveControl = null;
-            this.btnDelete.Location = new System.Drawing.Point(181, 3);
+            this.btnDelete.Location = new System.Drawing.Point(181, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 60);
             this.btnDelete.TabIndex = 7;
@@ -130,7 +130,7 @@
             // btnCreate
             // 
             this.btnCreate.ActiveControl = null;
-            this.btnCreate.Location = new System.Drawing.Point(3, 3);
+            this.btnCreate.Location = new System.Drawing.Point(3, 0);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(83, 60);
             this.btnCreate.TabIndex = 5;
@@ -141,7 +141,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ActiveControl = null;
-            this.btnRefresh.Location = new System.Drawing.Point(270, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(270, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 60);
             this.btnRefresh.TabIndex = 8;
@@ -151,7 +151,7 @@
             // btnUpdate
             // 
             this.btnUpdate.ActiveControl = null;
-            this.btnUpdate.Location = new System.Drawing.Point(92, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(92, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(83, 60);
             this.btnUpdate.TabIndex = 6;

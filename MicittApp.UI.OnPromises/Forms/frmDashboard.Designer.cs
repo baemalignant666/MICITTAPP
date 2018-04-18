@@ -40,10 +40,11 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.btnConsDocs);
-            this.metroPanel1.Controls.Add(this.btnUsers);
-            this.metroPanel1.Controls.Add(this.btnDocs);
+            this.metroPanel1.Controls.Add(this.BtnDirs);
             this.metroPanel1.Controls.Add(this.btnDpts);
+            this.metroPanel1.Controls.Add(this.btnUsers);
+            this.metroPanel1.Controls.Add(this.btnConsDocs);
+            this.metroPanel1.Controls.Add(this.btnDocs);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -59,7 +60,7 @@
             // btnConsDocs
             // 
             this.btnConsDocs.ActiveControl = null;
-            this.btnConsDocs.Location = new System.Drawing.Point(0, 340);
+            this.btnConsDocs.Location = new System.Drawing.Point(0, 255);
             this.btnConsDocs.Name = "btnConsDocs";
             this.btnConsDocs.Size = new System.Drawing.Size(119, 79);
             this.btnConsDocs.TabIndex = 7;
@@ -70,7 +71,7 @@
             // btnUsers
             // 
             this.btnUsers.ActiveControl = null;
-            this.btnUsers.Location = new System.Drawing.Point(0, 3);
+            this.btnUsers.Location = new System.Drawing.Point(0, 340);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(119, 79);
             this.btnUsers.TabIndex = 4;
@@ -81,7 +82,7 @@
             // btnDocs
             // 
             this.btnDocs.ActiveControl = null;
-            this.btnDocs.Location = new System.Drawing.Point(0, 255);
+            this.btnDocs.Location = new System.Drawing.Point(0, 0);
             this.btnDocs.Name = "btnDocs";
             this.btnDocs.Size = new System.Drawing.Size(119, 79);
             this.btnDocs.TabIndex = 6;
@@ -117,7 +118,7 @@
             // BtnDirs
             // 
             this.BtnDirs.ActiveControl = null;
-            this.BtnDirs.Location = new System.Drawing.Point(20, 230);
+            this.BtnDirs.Location = new System.Drawing.Point(0, 170);
             this.BtnDirs.Name = "BtnDirs";
             this.BtnDirs.Size = new System.Drawing.Size(119, 79);
             this.BtnDirs.TabIndex = 6;
@@ -130,7 +131,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 549);
-            this.Controls.Add(this.BtnDirs);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmDashboard";
