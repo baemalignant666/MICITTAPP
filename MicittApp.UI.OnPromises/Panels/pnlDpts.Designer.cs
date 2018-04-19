@@ -162,7 +162,6 @@
             // metroTabControl
             // 
             this.metroTabControl.Controls.Add(this.TabDocs);
-            this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 0;
@@ -193,6 +192,8 @@
             // 
             // dgvDpt
             // 
+            this.dgvDpt.AllowUserToAddRows = false;
+            this.dgvDpt.AllowUserToDeleteRows = false;
             this.dgvDpt.AllowUserToResizeRows = false;
             this.dgvDpt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvDpt.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -225,6 +226,7 @@
             this.dgvDpt.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvDpt.Location = new System.Drawing.Point(-4, 135);
             this.dgvDpt.Name = "dgvDpt";
+            this.dgvDpt.ReadOnly = true;
             this.dgvDpt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -244,22 +246,26 @@
             // 
             this.ID_DPTO.HeaderText = "ID_DPTO";
             this.ID_DPTO.Name = "ID_DPTO";
+            this.ID_DPTO.ReadOnly = true;
             this.ID_DPTO.Visible = false;
             // 
             // NOMBRE_DPT
             // 
             this.NOMBRE_DPT.HeaderText = "Nombre";
             this.NOMBRE_DPT.Name = "NOMBRE_DPT";
+            this.NOMBRE_DPT.ReadOnly = true;
             // 
             // DESCRIP_DPT
             // 
             this.DESCRIP_DPT.HeaderText = "Descripción";
             this.DESCRIP_DPT.Name = "DESCRIP_DPT";
+            this.DESCRIP_DPT.ReadOnly = true;
             // 
             // ID_DIRECCION
             // 
             this.ID_DIRECCION.HeaderText = "Direccion";
             this.ID_DIRECCION.Name = "ID_DIRECCION";
+            this.ID_DIRECCION.ReadOnly = true;
             // 
             // cbDir
             // 

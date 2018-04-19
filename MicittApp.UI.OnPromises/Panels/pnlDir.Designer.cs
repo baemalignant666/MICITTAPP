@@ -183,6 +183,9 @@
             // 
             // dgvDir
             // 
+            this.dgvDir.AllowUserToAddRows = false;
+            this.dgvDir.AllowUserToDeleteRows = false;
+            this.dgvDir.AllowUserToOrderColumns = true;
             this.dgvDir.AllowUserToResizeRows = false;
             this.dgvDir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvDir.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -213,6 +216,7 @@
             this.dgvDir.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvDir.Location = new System.Drawing.Point(-4, 135);
             this.dgvDir.Name = "dgvDir";
+            this.dgvDir.ReadOnly = true;
             this.dgvDir.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -227,11 +231,13 @@
             this.dgvDir.Size = new System.Drawing.Size(626, 224);
             this.dgvDir.TabIndex = 17;
             this.dgvDir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDir_CellClick);
+            this.dgvDir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDir_CellContentClick);
             // 
             // ID_DIR
             // 
             this.ID_DIR.HeaderText = "ID_DIR";
             this.ID_DIR.Name = "ID_DIR";
+            this.ID_DIR.ReadOnly = true;
             this.ID_DIR.Visible = false;
             this.ID_DIR.Width = 125;
             // 
@@ -239,6 +245,7 @@
             // 
             this.DESCRIP_DIR.HeaderText = "Descripción";
             this.DESCRIP_DIR.Name = "DESCRIP_DIR";
+            this.DESCRIP_DIR.ReadOnly = true;
             this.DESCRIP_DIR.Width = 175;
             // 
             // txtDescripDir

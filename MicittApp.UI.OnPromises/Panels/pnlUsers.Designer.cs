@@ -193,6 +193,8 @@
             // 
             // dgvUser
             // 
+            this.dgvUser.AllowUserToAddRows = false;
+            this.dgvUser.AllowUserToDeleteRows = false;
             this.dgvUser.AllowUserToResizeRows = false;
             this.dgvUser.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -229,6 +231,7 @@
             this.dgvUser.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvUser.Location = new System.Drawing.Point(-4, 135);
             this.dgvUser.Name = "dgvUser";
+            this.dgvUser.ReadOnly = true;
             this.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -247,34 +250,40 @@
             // 
             this.NOMBREC_USER.HeaderText = "Nombre";
             this.NOMBREC_USER.Name = "NOMBREC_USER";
+            this.NOMBREC_USER.ReadOnly = true;
             // 
             // LASTNAME
             // 
             this.LASTNAME.HeaderText = "Apellidos";
             this.LASTNAME.Name = "LASTNAME";
+            this.LASTNAME.ReadOnly = true;
             // 
             // ID_USER
             // 
             this.ID_USER.HeaderText = "Cédula";
             this.ID_USER.Name = "ID_USER";
+            this.ID_USER.ReadOnly = true;
             this.ID_USER.Width = 75;
             // 
             // ID_DPTO
             // 
             this.ID_DPTO.HeaderText = "Departamento";
             this.ID_DPTO.Name = "ID_DPTO";
+            this.ID_DPTO.ReadOnly = true;
             this.ID_DPTO.Width = 80;
             // 
             // EMAILUSER
             // 
             this.EMAILUSER.HeaderText = "Correo";
             this.EMAILUSER.Name = "EMAILUSER";
+            this.EMAILUSER.ReadOnly = true;
             this.EMAILUSER.Width = 80;
             // 
             // PASSWOORD
             // 
             this.PASSWOORD.HeaderText = "Contraseña";
             this.PASSWOORD.Name = "PASSWOORD";
+            this.PASSWOORD.ReadOnly = true;
             this.PASSWOORD.Visible = false;
             this.PASSWOORD.Width = 75;
             // 
@@ -282,12 +291,14 @@
             // 
             this.PHONEUSER.HeaderText = "Teléfono";
             this.PHONEUSER.Name = "PHONEUSER";
+            this.PHONEUSER.ReadOnly = true;
             this.PHONEUSER.Width = 75;
             // 
             // ROLUSER
             // 
             this.ROLUSER.HeaderText = "Rol";
             this.ROLUSER.Name = "ROLUSER";
+            this.ROLUSER.ReadOnly = true;
             this.ROLUSER.Width = 50;
             // 
             // txtPassword

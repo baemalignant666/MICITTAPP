@@ -145,5 +145,10 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             txtDescripDir.Text = "";
         }
+
+        private void dgvDir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
