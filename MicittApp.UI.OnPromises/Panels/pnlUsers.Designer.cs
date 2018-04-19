@@ -63,6 +63,8 @@
             this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
             this.lblNameUser = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnActivate = new MetroFramework.Controls.MetroTile();
+            this.btnInactive = new MetroFramework.Controls.MetroTile();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.lblSearch = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl.SuspendLayout();
@@ -104,7 +106,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ActiveControl = null;
-            this.btnRefresh.Location = new System.Drawing.Point(270, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(448, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 60);
             this.btnRefresh.TabIndex = 8;
@@ -117,7 +119,7 @@
             this.metroTabControl.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(626, 397);
+            this.metroTabControl.Size = new System.Drawing.Size(696, 437);
             this.metroTabControl.TabIndex = 9;
             this.metroTabControl.UseSelectable = true;
             // 
@@ -145,7 +147,7 @@
             this.TabUsers.HorizontalScrollbarSize = 10;
             this.TabUsers.Location = new System.Drawing.Point(4, 38);
             this.TabUsers.Name = "TabUsers";
-            this.TabUsers.Size = new System.Drawing.Size(618, 355);
+            this.TabUsers.Size = new System.Drawing.Size(688, 395);
             this.TabUsers.TabIndex = 0;
             this.TabUsers.Text = "Usuarios";
             this.TabUsers.VerticalScrollbarBarColor = true;
@@ -243,7 +245,7 @@
             this.dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUser.Size = new System.Drawing.Size(626, 224);
+            this.dgvUser.Size = new System.Drawing.Size(696, 267);
             this.dgvUser.TabIndex = 17;
             // 
             // NOMBREC_USER
@@ -536,6 +538,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnActivate);
+            this.metroPanel1.Controls.Add(this.btnInactive);
             this.metroPanel1.Controls.Add(this.txtSearch);
             this.metroPanel1.Controls.Add(this.lblSearch);
             this.metroPanel1.Controls.Add(this.btnDelete);
@@ -548,11 +552,31 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(626, 71);
+            this.metroPanel1.Size = new System.Drawing.Size(696, 71);
             this.metroPanel1.TabIndex = 10;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // btnActivate
+            // 
+            this.btnActivate.ActiveControl = null;
+            this.btnActivate.Location = new System.Drawing.Point(270, 0);
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(83, 60);
+            this.btnActivate.TabIndex = 14;
+            this.btnActivate.Text = "Activar";
+            this.btnActivate.UseSelectable = true;
+            // 
+            // btnInactive
+            // 
+            this.btnInactive.ActiveControl = null;
+            this.btnInactive.Location = new System.Drawing.Point(359, 0);
+            this.btnInactive.Name = "btnInactive";
+            this.btnInactive.Size = new System.Drawing.Size(83, 60);
+            this.btnInactive.TabIndex = 13;
+            this.btnInactive.Text = "Inactivar";
+            this.btnInactive.UseSelectable = true;
             // 
             // txtSearch
             // 
@@ -560,7 +584,7 @@
             // 
             // 
             this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(80, 1);
             this.txtSearch.CustomButton.Name = "";
             this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -569,7 +593,7 @@
             this.txtSearch.CustomButton.UseSelectable = true;
             this.txtSearch.CustomButton.Visible = false;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(479, 43);
+            this.txtSearch.Location = new System.Drawing.Point(590, 37);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -578,7 +602,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(143, 23);
+            this.txtSearch.Size = new System.Drawing.Size(102, 23);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.UseSelectable = true;
             this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -587,7 +611,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(426, 47);
+            this.lblSearch.Location = new System.Drawing.Point(537, 41);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(47, 19);
             this.lblSearch.TabIndex = 11;
@@ -600,7 +624,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroTabControl);
             this.Name = "pnlUsers";
-            this.Size = new System.Drawing.Size(626, 469);
+            this.Size = new System.Drawing.Size(696, 512);
             this.metroTabControl.ResumeLayout(false);
             this.TabUsers.ResumeLayout(false);
             this.TabUsers.PerformLayout();
@@ -647,5 +671,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ROLUSER;
         private MetroFramework.Controls.MetroTextBox txtSearch;
         private MetroFramework.Controls.MetroLabel lblSearch;
+        private MetroFramework.Controls.MetroTile btnActivate;
+        private MetroFramework.Controls.MetroTile btnInactive;
     }
 }

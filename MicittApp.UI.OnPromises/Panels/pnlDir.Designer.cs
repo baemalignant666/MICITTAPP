@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.lblSearch = new MetroFramework.Controls.MetroLabel();
@@ -45,6 +45,8 @@
             this.DESCRIP_DIR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDescripDir = new MetroFramework.Controls.MetroTextBox();
             this.lblDescrip = new MetroFramework.Controls.MetroLabel();
+            this.btnInactive = new MetroFramework.Controls.MetroTile();
+            this.btnActivate = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
             this.TabDir.SuspendLayout();
@@ -53,9 +55,11 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnActivate);
+            this.metroPanel1.Controls.Add(this.btnInactive);
             this.metroPanel1.Controls.Add(this.txtSearch);
-            this.metroPanel1.Controls.Add(this.lblSearch);
             this.metroPanel1.Controls.Add(this.btnDelete);
+            this.metroPanel1.Controls.Add(this.lblSearch);
             this.metroPanel1.Controls.Add(this.btnCreate);
             this.metroPanel1.Controls.Add(this.btnRefresh);
             this.metroPanel1.Controls.Add(this.btnUpdate);
@@ -65,7 +69,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(626, 71);
+            this.metroPanel1.Size = new System.Drawing.Size(696, 71);
             this.metroPanel1.TabIndex = 12;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -77,7 +81,7 @@
             // 
             // 
             this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(81, 1);
             this.txtSearch.CustomButton.Name = "";
             this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,7 +90,7 @@
             this.txtSearch.CustomButton.UseSelectable = true;
             this.txtSearch.CustomButton.Visible = false;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(479, 40);
+            this.txtSearch.Location = new System.Drawing.Point(590, 37);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -95,7 +99,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(143, 23);
+            this.txtSearch.Size = new System.Drawing.Size(103, 23);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.UseSelectable = true;
             this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -104,7 +108,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(426, 44);
+            this.lblSearch.Location = new System.Drawing.Point(537, 41);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(47, 19);
             this.lblSearch.TabIndex = 9;
@@ -113,7 +117,7 @@
             // btnDelete
             // 
             this.btnDelete.ActiveControl = null;
-            this.btnDelete.Location = new System.Drawing.Point(181, 0);
+            this.btnDelete.Location = new System.Drawing.Point(359, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 60);
             this.btnDelete.TabIndex = 7;
@@ -135,7 +139,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ActiveControl = null;
-            this.btnRefresh.Location = new System.Drawing.Point(270, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(448, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 60);
             this.btnRefresh.TabIndex = 8;
@@ -160,7 +164,7 @@
             this.metroTabControl.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(626, 397);
+            this.metroTabControl.Size = new System.Drawing.Size(696, 440);
             this.metroTabControl.TabIndex = 13;
             this.metroTabControl.UseSelectable = true;
             // 
@@ -174,7 +178,7 @@
             this.TabDir.HorizontalScrollbarSize = 10;
             this.TabDir.Location = new System.Drawing.Point(4, 38);
             this.TabDir.Name = "TabDir";
-            this.TabDir.Size = new System.Drawing.Size(618, 355);
+            this.TabDir.Size = new System.Drawing.Size(688, 398);
             this.TabDir.TabIndex = 0;
             this.TabDir.Text = "Direcciones";
             this.TabDir.VerticalScrollbarBarColor = true;
@@ -191,26 +195,26 @@
             this.dgvDir.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDir.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDir.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_DIR,
             this.DESCRIP_DIR});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDir.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDir.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDir.EnableHeadersVisualStyles = false;
             this.dgvDir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvDir.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -218,17 +222,17 @@
             this.dgvDir.Name = "dgvDir";
             this.dgvDir.ReadOnly = true;
             this.dgvDir.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDir.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDir.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDir.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDir.Size = new System.Drawing.Size(626, 224);
+            this.dgvDir.Size = new System.Drawing.Size(696, 267);
             this.dgvDir.TabIndex = 17;
             this.dgvDir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDir_CellClick);
             this.dgvDir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDir_CellContentClick);
@@ -287,6 +291,26 @@
             this.lblDescrip.TabIndex = 2;
             this.lblDescrip.Text = "Descripción";
             // 
+            // btnInactive
+            // 
+            this.btnInactive.ActiveControl = null;
+            this.btnInactive.Location = new System.Drawing.Point(181, 0);
+            this.btnInactive.Name = "btnInactive";
+            this.btnInactive.Size = new System.Drawing.Size(83, 60);
+            this.btnInactive.TabIndex = 11;
+            this.btnInactive.Text = "Inactivar";
+            this.btnInactive.UseSelectable = true;
+            // 
+            // btnActivate
+            // 
+            this.btnActivate.ActiveControl = null;
+            this.btnActivate.Location = new System.Drawing.Point(270, 0);
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(83, 60);
+            this.btnActivate.TabIndex = 12;
+            this.btnActivate.Text = "Activar";
+            this.btnActivate.UseSelectable = true;
+            // 
             // pnlDir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,7 +318,7 @@
             this.Controls.Add(this.metroTabControl);
             this.Controls.Add(this.metroPanel1);
             this.Name = "pnlDir";
-            this.Size = new System.Drawing.Size(626, 469);
+            this.Size = new System.Drawing.Size(696, 512);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroTabControl.ResumeLayout(false);
@@ -321,5 +345,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIP_DIR;
         private MetroFramework.Controls.MetroTextBox txtSearch;
         private MetroFramework.Controls.MetroLabel lblSearch;
+        private MetroFramework.Controls.MetroTile btnActivate;
+        private MetroFramework.Controls.MetroTile btnInactive;
     }
 }

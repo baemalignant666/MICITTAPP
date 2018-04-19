@@ -37,12 +37,11 @@
             // metroLink1
             // 
             this.metroLink1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.metroLink1.Location = new System.Drawing.Point(88, 237);
+            this.metroLink1.Location = new System.Drawing.Point(85, 267);
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(146, 23);
             this.metroLink1.TabIndex = 7;
             this.metroLink1.Text = "Reestrablecer Contraseña";
-            this.metroLink1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroLink1.UseSelectable = true;
             // 
             // txtPass
@@ -61,7 +60,7 @@
             this.txtPass.CustomButton.Visible = false;
             this.txtPass.Lines = new string[] {
         "Contraseña"};
-            this.txtPass.Location = new System.Drawing.Point(88, 146);
+            this.txtPass.Location = new System.Drawing.Point(85, 159);
             this.txtPass.MaxLength = 32767;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
@@ -73,7 +72,6 @@
             this.txtPass.Size = new System.Drawing.Size(146, 23);
             this.txtPass.TabIndex = 6;
             this.txtPass.Text = "Contraseña";
-            this.txtPass.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPass.UseSelectable = true;
             this.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -94,7 +92,7 @@
             this.txtUserID.CustomButton.Visible = false;
             this.txtUserID.Lines = new string[] {
         "ID"};
-            this.txtUserID.Location = new System.Drawing.Point(88, 117);
+            this.txtUserID.Location = new System.Drawing.Point(85, 130);
             this.txtUserID.MaxLength = 32767;
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.PasswordChar = '\0';
@@ -106,26 +104,24 @@
             this.txtUserID.Size = new System.Drawing.Size(146, 23);
             this.txtUserID.TabIndex = 5;
             this.txtUserID.Text = "ID";
-            this.txtUserID.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUserID.UseSelectable = true;
             this.txtUserID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUserID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(88, 175);
+            this.btnLogin.Location = new System.Drawing.Point(85, 188);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(146, 23);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
-            this.btnLogin.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnLogin.UseSelectable = true;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 318);
+            this.ClientSize = new System.Drawing.Size(314, 337);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUserID);
