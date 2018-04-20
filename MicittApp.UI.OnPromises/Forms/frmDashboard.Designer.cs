@@ -35,15 +35,17 @@
             this.btnConsDocs = new MetroFramework.Controls.MetroTile();
             this.btnDocs = new MetroFramework.Controls.MetroTile();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.btnTDoc = new MetroFramework.Controls.MetroTile();
+            this.btnlogout = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnConsDocs);
+            this.metroPanel1.Controls.Add(this.btnUsers);
             this.metroPanel1.Controls.Add(this.BtnDirs);
             this.metroPanel1.Controls.Add(this.btnDpts);
-            this.metroPanel1.Controls.Add(this.btnUsers);
-            this.metroPanel1.Controls.Add(this.btnConsDocs);
             this.metroPanel1.Controls.Add(this.btnDocs);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -82,7 +84,7 @@
             // btnUsers
             // 
             this.btnUsers.ActiveControl = null;
-            this.btnUsers.Location = new System.Drawing.Point(0, 340);
+            this.btnUsers.Location = new System.Drawing.Point(0, 425);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(119, 79);
             this.btnUsers.TabIndex = 4;
@@ -93,7 +95,7 @@
             // btnConsDocs
             // 
             this.btnConsDocs.ActiveControl = null;
-            this.btnConsDocs.Location = new System.Drawing.Point(0, 255);
+            this.btnConsDocs.Location = new System.Drawing.Point(0, 340);
             this.btnConsDocs.Name = "btnConsDocs";
             this.btnConsDocs.Size = new System.Drawing.Size(119, 79);
             this.btnConsDocs.TabIndex = 7;
@@ -126,11 +128,35 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // btnTDoc
+            // 
+            this.btnTDoc.ActiveControl = null;
+            this.btnTDoc.Location = new System.Drawing.Point(20, 315);
+            this.btnTDoc.Name = "btnTDoc";
+            this.btnTDoc.Size = new System.Drawing.Size(119, 79);
+            this.btnTDoc.TabIndex = 8;
+            this.btnTDoc.Text = "Tipo Documentos";
+            this.btnTDoc.UseSelectable = true;
+            this.btnTDoc.Click += new System.EventHandler(this.btnTDoc_Click);
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.ActiveControl = null;
+            this.btnlogout.Location = new System.Drawing.Point(668, 6);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(108, 48);
+            this.btnlogout.TabIndex = 7;
+            this.btnlogout.Text = "Cerrar Sesión";
+            this.btnlogout.UseSelectable = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 592);
+            this.Controls.Add(this.btnlogout);
+            this.Controls.Add(this.btnTDoc);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmDashboard";
@@ -149,5 +175,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroTile btnUsers;
         private MetroFramework.Controls.MetroTile BtnDirs;
+        private MetroFramework.Controls.MetroTile btnTDoc;
+        private MetroFramework.Controls.MetroTile btnlogout;
     }
 }

@@ -107,6 +107,12 @@
     <Compile Include="Panels\pnlSlider.Designer.cs">
       <DependentUpon>pnlSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\pnlTDocs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\pnlTDocs.Designer.cs">
+      <DependentUpon>pnlTDocs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\pnlUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\pnlDpts.resx">
       <DependentUpon>pnlDpts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\pnlTDocs.resx">
+      <DependentUpon>pnlTDocs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\pnlUsers.resx">
       <DependentUpon>pnlUsers.cs</DependentUpon>

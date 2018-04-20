@@ -204,7 +204,7 @@
             this.TabCons.Name = "TabCons";
             this.TabCons.Size = new System.Drawing.Size(688, 395);
             this.TabCons.TabIndex = 0;
-            this.TabCons.Text = "Departamentos";
+            this.TabCons.Text = "Consecutivos";
             this.TabCons.VerticalScrollbarBarColor = true;
             this.TabCons.VerticalScrollbarHighlightOnWheel = false;
             this.TabCons.VerticalScrollbarSize = 10;

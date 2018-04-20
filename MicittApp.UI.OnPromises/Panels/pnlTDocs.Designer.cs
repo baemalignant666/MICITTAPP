@@ -1,6 +1,6 @@
 ﻿namespace MicittApp.UI.OnPromises.Panels
 {
-    partial class pnlDir
+    partial class pnlTDocs
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,34 +32,34 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnInactivate = new MetroFramework.Controls.MetroTile();
             this.btnActivate = new MetroFramework.Controls.MetroTile();
-            this.btnInactive = new MetroFramework.Controls.MetroTile();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-            this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.lblSearch = new MetroFramework.Controls.MetroLabel();
+            this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.btnCreate = new MetroFramework.Controls.MetroTile();
             this.btnRefresh = new MetroFramework.Controls.MetroTile();
             this.btnUpdate = new MetroFramework.Controls.MetroTile();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
-            this.TabDir = new MetroFramework.Controls.MetroTabPage();
-            this.dgvDir = new MetroFramework.Controls.MetroGrid();
-            this.ID_DIR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIP_DIR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDescripDir = new MetroFramework.Controls.MetroTextBox();
-            this.lblDescrip = new MetroFramework.Controls.MetroLabel();
+            this.TabDocs = new MetroFramework.Controls.MetroTabPage();
+            this.dgvDoc = new MetroFramework.Controls.MetroGrid();
+            this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
+            this.lblTDoc = new MetroFramework.Controls.MetroLabel();
+            this.ID_TDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_TDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
-            this.TabDir.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDir)).BeginInit();
+            this.TabDocs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnInactivate);
             this.metroPanel1.Controls.Add(this.btnActivate);
-            this.metroPanel1.Controls.Add(this.btnInactive);
             this.metroPanel1.Controls.Add(this.txtSearch);
-            this.metroPanel1.Controls.Add(this.btnDelete);
             this.metroPanel1.Controls.Add(this.lblSearch);
+            this.metroPanel1.Controls.Add(this.btnDelete);
             this.metroPanel1.Controls.Add(this.btnCreate);
             this.metroPanel1.Controls.Add(this.btnRefresh);
             this.metroPanel1.Controls.Add(this.btnUpdate);
@@ -75,25 +75,25 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // btnInactivate
+            // 
+            this.btnInactivate.ActiveControl = null;
+            this.btnInactivate.Location = new System.Drawing.Point(181, 0);
+            this.btnInactivate.Name = "btnInactivate";
+            this.btnInactivate.Size = new System.Drawing.Size(83, 60);
+            this.btnInactivate.TabIndex = 14;
+            this.btnInactivate.Text = "Inactivar";
+            this.btnInactivate.UseSelectable = true;
+            // 
             // btnActivate
             // 
             this.btnActivate.ActiveControl = null;
             this.btnActivate.Location = new System.Drawing.Point(270, 0);
             this.btnActivate.Name = "btnActivate";
             this.btnActivate.Size = new System.Drawing.Size(83, 60);
-            this.btnActivate.TabIndex = 12;
+            this.btnActivate.TabIndex = 13;
             this.btnActivate.Text = "Activar";
             this.btnActivate.UseSelectable = true;
-            // 
-            // btnInactive
-            // 
-            this.btnInactive.ActiveControl = null;
-            this.btnInactive.Location = new System.Drawing.Point(181, 0);
-            this.btnInactive.Name = "btnInactive";
-            this.btnInactive.Size = new System.Drawing.Size(83, 60);
-            this.btnInactive.TabIndex = 11;
-            this.btnInactive.Text = "Inactivar";
-            this.btnInactive.UseSelectable = true;
             // 
             // txtSearch
             // 
@@ -120,10 +120,19 @@
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
             this.txtSearch.Size = new System.Drawing.Size(103, 23);
-            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TabIndex = 12;
             this.txtSearch.UseSelectable = true;
             this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(537, 41);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(47, 19);
+            this.lblSearch.TabIndex = 11;
+            this.lblSearch.Text = "Buscar";
             // 
             // btnDelete
             // 
@@ -134,16 +143,6 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseSelectable = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(537, 41);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(47, 19);
-            this.lblSearch.TabIndex = 9;
-            this.lblSearch.Text = "Buscar";
             // 
             // btnCreate
             // 
@@ -154,7 +153,6 @@
             this.btnCreate.TabIndex = 5;
             this.btnCreate.Text = "Agregar";
             this.btnCreate.UseSelectable = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnRefresh
             // 
@@ -165,7 +163,6 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refrescar";
             this.btnRefresh.UseSelectable = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnUpdate
             // 
@@ -176,45 +173,43 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseSelectable = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // metroTabControl
             // 
-            this.metroTabControl.Controls.Add(this.TabDir);
+            this.metroTabControl.Controls.Add(this.TabDocs);
             this.metroTabControl.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(696, 440);
+            this.metroTabControl.Size = new System.Drawing.Size(696, 437);
             this.metroTabControl.TabIndex = 13;
             this.metroTabControl.UseSelectable = true;
             // 
-            // TabDir
+            // TabDocs
             // 
-            this.TabDir.Controls.Add(this.dgvDir);
-            this.TabDir.Controls.Add(this.txtDescripDir);
-            this.TabDir.Controls.Add(this.lblDescrip);
-            this.TabDir.HorizontalScrollbarBarColor = true;
-            this.TabDir.HorizontalScrollbarHighlightOnWheel = false;
-            this.TabDir.HorizontalScrollbarSize = 10;
-            this.TabDir.Location = new System.Drawing.Point(4, 38);
-            this.TabDir.Name = "TabDir";
-            this.TabDir.Size = new System.Drawing.Size(688, 398);
-            this.TabDir.TabIndex = 0;
-            this.TabDir.Text = "Direcciones";
-            this.TabDir.VerticalScrollbarBarColor = true;
-            this.TabDir.VerticalScrollbarHighlightOnWheel = false;
-            this.TabDir.VerticalScrollbarSize = 10;
+            this.TabDocs.Controls.Add(this.dgvDoc);
+            this.TabDocs.Controls.Add(this.txtNameUser);
+            this.TabDocs.Controls.Add(this.lblTDoc);
+            this.TabDocs.HorizontalScrollbarBarColor = true;
+            this.TabDocs.HorizontalScrollbarHighlightOnWheel = false;
+            this.TabDocs.HorizontalScrollbarSize = 10;
+            this.TabDocs.Location = new System.Drawing.Point(4, 38);
+            this.TabDocs.Name = "TabDocs";
+            this.TabDocs.Size = new System.Drawing.Size(688, 395);
+            this.TabDocs.TabIndex = 0;
+            this.TabDocs.Text = "Tipo de Documentos";
+            this.TabDocs.VerticalScrollbarBarColor = true;
+            this.TabDocs.VerticalScrollbarHighlightOnWheel = false;
+            this.TabDocs.VerticalScrollbarSize = 10;
             // 
-            // dgvDir
+            // dgvDoc
             // 
-            this.dgvDir.AllowUserToAddRows = false;
-            this.dgvDir.AllowUserToDeleteRows = false;
-            this.dgvDir.AllowUserToOrderColumns = true;
-            this.dgvDir.AllowUserToResizeRows = false;
-            this.dgvDir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDir.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDir.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvDir.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDoc.AllowUserToAddRows = false;
+            this.dgvDoc.AllowUserToDeleteRows = false;
+            this.dgvDoc.AllowUserToResizeRows = false;
+            this.dgvDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -222,11 +217,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_DIR,
-            this.DESCRIP_DIR});
+            this.dgvDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_TDOC,
+            this.NAME_TDOC});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -234,14 +229,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDir.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDir.EnableHeadersVisualStyles = false;
-            this.dgvDir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvDir.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDir.Location = new System.Drawing.Point(-4, 135);
-            this.dgvDir.Name = "dgvDir";
-            this.dgvDir.ReadOnly = true;
-            this.dgvDir.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDoc.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDoc.EnableHeadersVisualStyles = false;
+            this.dgvDoc.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvDoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDoc.Location = new System.Drawing.Point(-4, 164);
+            this.dgvDoc.Name = "dgvDoc";
+            this.dgvDoc.ReadOnly = true;
+            this.dgvDoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -249,81 +244,78 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDir.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDir.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvDir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDir.Size = new System.Drawing.Size(696, 267);
-            this.dgvDir.TabIndex = 17;
-            this.dgvDir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDir_CellClick);
+            this.dgvDoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDoc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDoc.Size = new System.Drawing.Size(696, 238);
+            this.dgvDoc.TabIndex = 17;
             // 
-            // ID_DIR
-            // 
-            this.ID_DIR.HeaderText = "ID_DIR";
-            this.ID_DIR.Name = "ID_DIR";
-            this.ID_DIR.ReadOnly = true;
-            this.ID_DIR.Visible = false;
-            this.ID_DIR.Width = 125;
-            // 
-            // DESCRIP_DIR
-            // 
-            this.DESCRIP_DIR.HeaderText = "Nombre";
-            this.DESCRIP_DIR.Name = "DESCRIP_DIR";
-            this.DESCRIP_DIR.ReadOnly = true;
-            this.DESCRIP_DIR.Width = 175;
-            // 
-            // txtDescripDir
+            // txtNameUser
             // 
             // 
             // 
             // 
-            this.txtDescripDir.CustomButton.Image = null;
-            this.txtDescripDir.CustomButton.Location = new System.Drawing.Point(193, 1);
-            this.txtDescripDir.CustomButton.Name = "";
-            this.txtDescripDir.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDescripDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDescripDir.CustomButton.TabIndex = 1;
-            this.txtDescripDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDescripDir.CustomButton.UseSelectable = true;
-            this.txtDescripDir.CustomButton.Visible = false;
-            this.txtDescripDir.Lines = new string[0];
-            this.txtDescripDir.Location = new System.Drawing.Point(100, 13);
-            this.txtDescripDir.MaxLength = 32767;
-            this.txtDescripDir.Name = "txtDescripDir";
-            this.txtDescripDir.PasswordChar = '\0';
-            this.txtDescripDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescripDir.SelectedText = "";
-            this.txtDescripDir.SelectionLength = 0;
-            this.txtDescripDir.SelectionStart = 0;
-            this.txtDescripDir.ShortcutsEnabled = true;
-            this.txtDescripDir.Size = new System.Drawing.Size(215, 23);
-            this.txtDescripDir.TabIndex = 3;
-            this.txtDescripDir.UseSelectable = true;
-            this.txtDescripDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDescripDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNameUser.CustomButton.Image = null;
+            this.txtNameUser.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtNameUser.CustomButton.Name = "";
+            this.txtNameUser.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNameUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNameUser.CustomButton.TabIndex = 1;
+            this.txtNameUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNameUser.CustomButton.UseSelectable = true;
+            this.txtNameUser.CustomButton.Visible = false;
+            this.txtNameUser.Lines = new string[0];
+            this.txtNameUser.Location = new System.Drawing.Point(88, 13);
+            this.txtNameUser.MaxLength = 32767;
+            this.txtNameUser.Name = "txtNameUser";
+            this.txtNameUser.PasswordChar = '\0';
+            this.txtNameUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNameUser.SelectedText = "";
+            this.txtNameUser.SelectionLength = 0;
+            this.txtNameUser.SelectionStart = 0;
+            this.txtNameUser.ShortcutsEnabled = true;
+            this.txtNameUser.Size = new System.Drawing.Size(143, 23);
+            this.txtNameUser.TabIndex = 3;
+            this.txtNameUser.UseSelectable = true;
+            this.txtNameUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNameUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // lblDescrip
+            // lblTDoc
             // 
-            this.lblDescrip.AutoSize = true;
-            this.lblDescrip.Location = new System.Drawing.Point(5, 17);
-            this.lblDescrip.Name = "lblDescrip";
-            this.lblDescrip.Size = new System.Drawing.Size(59, 19);
-            this.lblDescrip.TabIndex = 2;
-            this.lblDescrip.Text = "Nombre";
+            this.lblTDoc.AutoSize = true;
+            this.lblTDoc.Location = new System.Drawing.Point(5, 17);
+            this.lblTDoc.Name = "lblTDoc";
+            this.lblTDoc.Size = new System.Drawing.Size(59, 19);
+            this.lblTDoc.TabIndex = 2;
+            this.lblTDoc.Text = "Nombre";
             // 
-            // pnlDir
+            // ID_TDOC
+            // 
+            this.ID_TDOC.HeaderText = "ID";
+            this.ID_TDOC.Name = "ID_TDOC";
+            this.ID_TDOC.ReadOnly = true;
+            this.ID_TDOC.Visible = false;
+            // 
+            // NAME_TDOC
+            // 
+            this.NAME_TDOC.HeaderText = "Nombre del Documento";
+            this.NAME_TDOC.Name = "NAME_TDOC";
+            this.NAME_TDOC.ReadOnly = true;
+            // 
+            // pnlTDocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroTabControl);
             this.Controls.Add(this.metroPanel1);
-            this.Name = "pnlDir";
+            this.Name = "pnlTDocs";
             this.Size = new System.Drawing.Size(696, 512);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroTabControl.ResumeLayout(false);
-            this.TabDir.ResumeLayout(false);
-            this.TabDir.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDir)).EndInit();
+            this.TabDocs.ResumeLayout(false);
+            this.TabDocs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,20 +323,20 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroTile btnInactivate;
+        private MetroFramework.Controls.MetroTile btnActivate;
+        private MetroFramework.Controls.MetroTextBox txtSearch;
+        private MetroFramework.Controls.MetroLabel lblSearch;
         private MetroFramework.Controls.MetroTile btnDelete;
         private MetroFramework.Controls.MetroTile btnCreate;
         private MetroFramework.Controls.MetroTile btnRefresh;
         private MetroFramework.Controls.MetroTile btnUpdate;
         private MetroFramework.Controls.MetroTabControl metroTabControl;
-        private MetroFramework.Controls.MetroTabPage TabDir;
-        private MetroFramework.Controls.MetroGrid dgvDir;
-        private MetroFramework.Controls.MetroTextBox txtDescripDir;
-        private MetroFramework.Controls.MetroLabel lblDescrip;
-        private MetroFramework.Controls.MetroTextBox txtSearch;
-        private MetroFramework.Controls.MetroLabel lblSearch;
-        private MetroFramework.Controls.MetroTile btnActivate;
-        private MetroFramework.Controls.MetroTile btnInactive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_DIR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIP_DIR;
+        private MetroFramework.Controls.MetroTabPage TabDocs;
+        private MetroFramework.Controls.MetroGrid dgvDoc;
+        private MetroFramework.Controls.MetroTextBox txtNameUser;
+        private MetroFramework.Controls.MetroLabel lblTDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_TDOC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_TDOC;
     }
 }
