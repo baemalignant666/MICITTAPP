@@ -26,6 +26,7 @@ namespace MicittApp.UI.OnPromises.Panels
             btnUpdate.Enabled = false;
             btnInactivate.Enabled = false;
             btnDelete.Enabled = false;
+            LoadDataGrid();
         }
         //Managament Methods
         private void LoadDataGrid()
