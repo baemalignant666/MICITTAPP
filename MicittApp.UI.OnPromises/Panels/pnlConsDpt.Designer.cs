@@ -32,9 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
+            this.btnActivate = new MetroFramework.Controls.MetroTile();
+            this.btnInactive = new MetroFramework.Controls.MetroTile();
             this.lblSearch = new MetroFramework.Controls.MetroLabel();
             this.btnDelete = new MetroFramework.Controls.MetroTile();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.btnCreate = new MetroFramework.Controls.MetroTile();
             this.btnRefresh = new MetroFramework.Controls.MetroTile();
             this.btnUpdate = new MetroFramework.Controls.MetroTile();
@@ -55,9 +57,11 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.txtSearch);
+            this.metroPanel1.Controls.Add(this.btnActivate);
+            this.metroPanel1.Controls.Add(this.btnInactive);
             this.metroPanel1.Controls.Add(this.lblSearch);
             this.metroPanel1.Controls.Add(this.btnDelete);
+            this.metroPanel1.Controls.Add(this.txtSearch);
             this.metroPanel1.Controls.Add(this.btnCreate);
             this.metroPanel1.Controls.Add(this.btnRefresh);
             this.metroPanel1.Controls.Add(this.btnUpdate);
@@ -67,46 +71,36 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(626, 71);
+            this.metroPanel1.Size = new System.Drawing.Size(696, 71);
             this.metroPanel1.TabIndex = 12;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // txtSearch
+            // btnActivate
             // 
+            this.btnActivate.ActiveControl = null;
+            this.btnActivate.Location = new System.Drawing.Point(270, 0);
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(83, 60);
+            this.btnActivate.TabIndex = 14;
+            this.btnActivate.Text = "Activar";
+            this.btnActivate.UseSelectable = true;
             // 
+            // btnInactive
             // 
-            // 
-            this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtSearch.CustomButton.Name = "";
-            this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSearch.CustomButton.TabIndex = 1;
-            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSearch.CustomButton.UseSelectable = true;
-            this.txtSearch.CustomButton.Visible = false;
-            this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(479, 40);
-            this.txtSearch.MaxLength = 32767;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.SelectionLength = 0;
-            this.txtSearch.SelectionStart = 0;
-            this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(143, 23);
-            this.txtSearch.TabIndex = 12;
-            this.txtSearch.UseSelectable = true;
-            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.btnInactive.ActiveControl = null;
+            this.btnInactive.Location = new System.Drawing.Point(181, 0);
+            this.btnInactive.Name = "btnInactive";
+            this.btnInactive.Size = new System.Drawing.Size(83, 60);
+            this.btnInactive.TabIndex = 13;
+            this.btnInactive.Text = "Inactivar";
+            this.btnInactive.UseSelectable = true;
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(426, 44);
+            this.lblSearch.Location = new System.Drawing.Point(537, 41);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(47, 19);
             this.lblSearch.TabIndex = 11;
@@ -115,13 +109,43 @@
             // btnDelete
             // 
             this.btnDelete.ActiveControl = null;
-            this.btnDelete.Location = new System.Drawing.Point(181, 0);
+            this.btnDelete.Location = new System.Drawing.Point(359, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 60);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtSearch
+            // 
+            // 
+            // 
+            // 
+            this.txtSearch.CustomButton.Image = null;
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(80, 1);
+            this.txtSearch.CustomButton.Name = "";
+            this.txtSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearch.CustomButton.TabIndex = 1;
+            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearch.CustomButton.UseSelectable = true;
+            this.txtSearch.CustomButton.Visible = false;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(590, 37);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(102, 23);
+            this.txtSearch.TabIndex = 12;
+            this.txtSearch.UseSelectable = true;
+            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnCreate
             // 
@@ -137,7 +161,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ActiveControl = null;
-            this.btnRefresh.Location = new System.Drawing.Point(270, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(448, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 60);
             this.btnRefresh.TabIndex = 8;
@@ -162,7 +186,7 @@
             this.metroTabControl.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(626, 397);
+            this.metroTabControl.Size = new System.Drawing.Size(696, 437);
             this.metroTabControl.TabIndex = 13;
             this.metroTabControl.UseSelectable = true;
             // 
@@ -178,9 +202,9 @@
             this.TabCons.HorizontalScrollbarSize = 10;
             this.TabCons.Location = new System.Drawing.Point(4, 38);
             this.TabCons.Name = "TabCons";
-            this.TabCons.Size = new System.Drawing.Size(618, 355);
+            this.TabCons.Size = new System.Drawing.Size(688, 395);
             this.TabCons.TabIndex = 0;
-            this.TabCons.Text = "Departamentos";
+            this.TabCons.Text = "Consecutivos";
             this.TabCons.VerticalScrollbarBarColor = true;
             this.TabCons.VerticalScrollbarHighlightOnWheel = false;
             this.TabCons.VerticalScrollbarSize = 10;
@@ -231,7 +255,7 @@
             this.dgvCons.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCons.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCons.Size = new System.Drawing.Size(626, 224);
+            this.dgvCons.Size = new System.Drawing.Size(696, 267);
             this.dgvCons.TabIndex = 17;
             this.dgvCons.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCons_CellClick);
             // 
@@ -253,7 +277,7 @@
             this.cbDpto.ItemHeight = 23;
             this.cbDpto.Location = new System.Drawing.Point(107, 42);
             this.cbDpto.Name = "cbDpto";
-            this.cbDpto.Size = new System.Drawing.Size(143, 29);
+            this.cbDpto.Size = new System.Drawing.Size(206, 29);
             this.cbDpto.TabIndex = 14;
             this.cbDpto.UseSelectable = true;
             // 
@@ -272,7 +296,7 @@
             // 
             // 
             this.txtCons.CustomButton.Image = null;
-            this.txtCons.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtCons.CustomButton.Location = new System.Drawing.Point(184, 1);
             this.txtCons.CustomButton.Name = "";
             this.txtCons.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCons.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -290,7 +314,7 @@
             this.txtCons.SelectionLength = 0;
             this.txtCons.SelectionStart = 0;
             this.txtCons.ShortcutsEnabled = true;
-            this.txtCons.Size = new System.Drawing.Size(143, 23);
+            this.txtCons.Size = new System.Drawing.Size(206, 23);
             this.txtCons.TabIndex = 3;
             this.txtCons.UseSelectable = true;
             this.txtCons.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -312,7 +336,7 @@
             this.Controls.Add(this.metroTabControl);
             this.Controls.Add(this.metroPanel1);
             this.Name = "pnlConsDpt";
-            this.Size = new System.Drawing.Size(626, 469);
+            this.Size = new System.Drawing.Size(696, 512);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroTabControl.ResumeLayout(false);
@@ -341,5 +365,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_DPT;
         private MetroFramework.Controls.MetroTextBox txtSearch;
         private MetroFramework.Controls.MetroLabel lblSearch;
+        private MetroFramework.Controls.MetroTile btnActivate;
+        private MetroFramework.Controls.MetroTile btnInactive;
     }
 }

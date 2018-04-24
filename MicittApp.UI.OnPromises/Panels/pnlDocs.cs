@@ -24,9 +24,25 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             InitializeComponent();
         }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
+
+        }
+        private void LoadCbDpt(ComboBox cb)
+        {
+            try
+            {
+                var ListCons = ApiAccessCons.RetrieveAllConsecutivo<Consecutivo>();
+                foreach (Consecutivo element in ListCons)
+                {
+                    cb.Items.Add(element.Id_Identificador);
+                }
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                    "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

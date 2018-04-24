@@ -20,10 +20,15 @@ namespace MicittApp.UI.OnPromises.Panels
         DireccionManagement ApiAccess = new DireccionManagement();
         Direccion ObjDir = new Direccion();
         string IdSession = MystaticValues.IdSession;
+       
         public pnlDir(Form owner) : base(owner)
         {
             InitializeComponent();
             LoadDataGrid();
+            btnActivate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnInactive.Enabled = false;
+            btnDelete.Enabled = false;
         }
         //Managament Methods
         private void LoadDataGrid()
@@ -41,31 +46,24 @@ namespace MicittApp.UI.OnPromises.Panels
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var NameDir = txtDescripDir.Text;
-            if (NameDir.Trim() == string.Empty)
-            {
-                MetroMessageBox.Show(this, "El Nombre -" + NameDir + "- no es Valido. \n Favor Digite un Nombre Valido", "Error en Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDescripDir.Focus();
-            }
-            else
+            if (CheckFields() != true && CheckFieldsDuplicate() != true) // Validation
             {
                 try
                 {
-
                     ObjDir.Descrip_Dir = NameDir;
                     ObjDir.Createby = IdSession;
                     ApiAccess.CreateDireccion(ObjDir);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                        "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 CleanFields();
                 LoadDataGrid();
@@ -74,12 +72,7 @@ namespace MicittApp.UI.OnPromises.Panels
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             var NameDir = txtDescripDir.Text;
-            if (NameDir.Trim() == string.Empty)
-            {
-                MetroMessageBox.Show(this, "El Nombre -" + NameDir + "- no es Valido. \n Favor Digite un Nombre Valido", "Error en Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDescripDir.Focus();
-            }
-            else
+            if (CheckFields() != true && CheckFieldsDuplicate() != true)
             {
                 try
                 {
@@ -89,13 +82,14 @@ namespace MicittApp.UI.OnPromises.Panels
                     ObjDir.Updateby = IdSession;
                     ApiAccess.UpdateDireccion(ObjDir);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                        "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                CleanFields();
+                LoadDataGrid();
             }
-            CleanFields();
-            LoadDataGrid();
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -120,20 +114,22 @@ namespace MicittApp.UI.OnPromises.Panels
         }
         private void dgvDir_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnActivate.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnInactive.Enabled = true;
+            btnDelete.Enabled = true;
             try
             {
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
                 int Row = dgvDir.CurrentRow.Index;
                 var IdDir = dgvDir[0, Row].Value;
                 txtDescripDir.Text = dgvDir[1, Row].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                    "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -144,11 +140,41 @@ namespace MicittApp.UI.OnPromises.Panels
         private void CleanFields()
         {
             txtDescripDir.Text = "";
+            btnActivate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnInactive.Enabled = false;
+            btnDelete.Enabled = false;
         }
-
-        private void dgvDir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private bool CheckFields()
         {
-
+            var NameDir = txtDescripDir.Text;
+            bool finded = false;
+            if (NameDir.Trim() == string.Empty)
+            {
+                MetroMessageBox.Show(this, "El Nombre -" + NameDir + "- no es Valido. \n Favor Digite un Nombre Valido", "Error en Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDescripDir.Focus();
+                finded = true;
+            }
+            return finded;
+        }
+        private bool CheckFieldsDuplicate()
+        {
+            var NameDir = txtDescripDir.Text;
+            bool finded = false;
+            var ListDir = ApiAccess.RetrieveAllDireccion<Direccion>();
+            foreach (Direccion element in ListDir)
+            {
+                if (element.Descrip_Dir == NameDir)
+                {
+                    MetroMessageBox.Show(this, "El Nombre -" + NameDir + "- no es Valido. \n No se aceptan valores duplicados", "Error en Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    finded = true;
+                    if (finded == true)
+                    {
+                        break;
+                    }
+                }
+            }
+            return finded;
         }
     }
 }
