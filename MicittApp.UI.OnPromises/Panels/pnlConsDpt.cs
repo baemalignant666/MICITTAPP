@@ -25,9 +25,9 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             InitializeComponent();
             LoadPanel();
-            btnActivate.Enabled = false;
+          
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
+           
             btnDelete.Enabled = false;
         }
         //Managament Methods
@@ -201,9 +201,9 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             txtCons.Text = "";
             cbDpto.Text = "";
-            btnActivate.Enabled = false;
+        
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
+           
             btnDelete.Enabled = false;
         }
         private bool CheckFields()

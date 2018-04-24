@@ -22,9 +22,9 @@ namespace MicittApp.UI.OnPromises.Panels
         public pnlTDocs(Form owner) : base(owner)
         {
             InitializeComponent();
-            btnActivate.Enabled = false;
+          
             btnUpdate.Enabled = false;
-            btnInactivate.Enabled = false;
+         
             btnDelete.Enabled = false;
             LoadDataGrid();
         }
@@ -91,9 +91,9 @@ namespace MicittApp.UI.OnPromises.Panels
         private void CleanFields()
         {
             txtNameUser.Text = "";
-            btnActivate.Enabled = false;
+            
             btnUpdate.Enabled = false;
-            btnInactivate.Enabled = false;
+           ;
             btnDelete.Enabled = false;
         }
         private bool CheckFields()
@@ -150,9 +150,8 @@ namespace MicittApp.UI.OnPromises.Panels
         }
         private void dgvTDoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActivate.Enabled = true;
+            
             btnUpdate.Enabled = true;
-            btnInactivate.Enabled = true;
             btnDelete.Enabled = true;
             try
             {

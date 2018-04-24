@@ -8,14 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MicittApp.UI.OnPromises.Program;
+using MicittApp.Entities.Objects;
+using MicittApp.ApiCore.Management;
+using MetroFramework;
 
 namespace MicittApp.UI.OnPromises.Forms
 {
     public partial class frmDashboard : MetroFramework.Forms.MetroForm
     {
+        UsuarioManagement ApiAccess = new UsuarioManagement();
+        Usuario ObjUser = new Usuario();
+        string IdSession = MystaticValues.IdSession;
         public frmDashboard()
         {
             InitializeComponent();
+            LoadPermissions();
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
@@ -60,6 +68,8 @@ namespace MicittApp.UI.OnPromises.Forms
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
+            Program.SetMainForm(new frmLogin());
+            Program.ShowMainForm();
             this.Close();
         }
 
@@ -69,6 +79,43 @@ namespace MicittApp.UI.OnPromises.Forms
             pnlTDocs _pnlTDocs = new pnlTDocs(this);
             this.metroPanel2.Controls.Add(_pnlTDocs);
             _pnlTDocs.swipe();
+        }
+        private void LoadPermissions()
+        {
+            if(GetRole() == "REGULAR")
+            {
+                btnDocs.Visible = true;
+                btnDpts.Visible = false;
+                BtnDirs.Visible = false;
+                btnTDoc.Visible = false;
+                btnConsDocs.Visible = false;
+                btnUsers.Visible = false;
+            }
+        }
+        private string GetRole()
+        {
+            string Role = "";
+            try
+            {
+               
+
+                var ListUser = ApiAccess.RetrieveAllUsuario<Usuario>();
+                foreach (Usuario element in ListUser)
+                {
+                    if (IdSession == element.Id_User)
+                    {
+                        Role = element.Role;
+                        break;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                    "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Role;
         }
     }
 }

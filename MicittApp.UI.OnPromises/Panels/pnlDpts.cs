@@ -24,9 +24,9 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             InitializeComponent();
             LoadPanel();
-            btnActivate.Enabled = false;
+            
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
+            
             btnDelete.Enabled = false;
         }
         //Managament Methods
@@ -43,10 +43,10 @@ namespace MicittApp.UI.OnPromises.Panels
                     dgvDpt.Rows.Add(Row);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Favor Comunicarse con el equipo de Sistemas",
+                "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -225,19 +225,19 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             txtDescripDpt.Text = "";
             txtNameDpt.Text = "";
-            txtSearch.Text = "";
-            btnActivate.Enabled = false;
+            
+            
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
+            
             btnDelete.Enabled = false;
         }
         private void dgvDpt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                btnActivate.Enabled = true;
+                
                 btnUpdate.Enabled = true;
-                btnInactive.Enabled = true;
+               
                 btnDelete.Enabled = true;
                 int Row = dgvDpt.CurrentRow.Index;
                 var IdDpto = dgvDpt[0, Row].Value;
@@ -251,6 +251,11 @@ namespace MicittApp.UI.OnPromises.Panels
                 MetroMessageBox.Show(this, "Ha ocurrido un error:" + ex + "Event Cell_click",
                      "Error en Acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void metroPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

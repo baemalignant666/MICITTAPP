@@ -164,9 +164,9 @@ namespace MicittApp.DataAccess
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CRUD_USUARIO")]
-		public ISingleResult<SP_CRUD_USUARIOResult> SP_CRUD_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pNOMBREC_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO1_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO2_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string pCORREO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string pTELEFONO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_ROLE, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pPASSWORD_USER)
+		public ISingleResult<SP_CRUD_USUARIOResult> SP_CRUD_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_ACTION, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_BY, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pID_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pNOMBREC_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO1_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pAPELLIDO2_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string pCORREO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string pTELEFONO_USER, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string pROLE, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pID_DPTO, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pPASSWORD_USER)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_USER, pNOMBREC_USER, pAPELLIDO1_USER, pAPELLIDO2_USER, pCORREO_USER, pTELEFONO_USER, pID_ROLE, pID_DPTO, pPASSWORD_USER);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_ACTION, pID_BY, pID_USER, pNOMBREC_USER, pAPELLIDO1_USER, pAPELLIDO2_USER, pCORREO_USER, pTELEFONO_USER, pROLE, pID_DPTO, pPASSWORD_USER);
 			return ((ISingleResult<SP_CRUD_USUARIOResult>)(result.ReturnValue));
 		}
 	}
@@ -2119,7 +2119,7 @@ namespace MicittApp.DataAccess
 		
 		private string _UBICACION_DOC;
 		
-		private int _ID_TDOC;
+		private string _NAME_TDOC;
 		
 		private string _PRIORIDAD_DOC;
 		
@@ -2227,18 +2227,18 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TDOC", DbType="Int NOT NULL")]
-		public int ID_TDOC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_TDOC", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string NAME_TDOC
 		{
 			get
 			{
-				return this._ID_TDOC;
+				return this._NAME_TDOC;
 			}
 			set
 			{
-				if ((this._ID_TDOC != value))
+				if ((this._NAME_TDOC != value))
 				{
-					this._ID_TDOC = value;
+					this._NAME_TDOC = value;
 				}
 			}
 		}
@@ -2377,7 +2377,7 @@ namespace MicittApp.DataAccess
 		
 		private int _ID_TDOC;
 		
-		private string _NAMA_TDOC;
+		private string _NAME_TDOC;
 		
 		public SP_CRUD_TDOCResult()
 		{
@@ -2399,18 +2399,18 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAMA_TDOC", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string NAMA_TDOC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_TDOC", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string NAME_TDOC
 		{
 			get
 			{
-				return this._NAMA_TDOC;
+				return this._NAME_TDOC;
 			}
 			set
 			{
-				if ((this._NAMA_TDOC != value))
+				if ((this._NAME_TDOC != value))
 				{
-					this._NAMA_TDOC = value;
+					this._NAME_TDOC = value;
 				}
 			}
 		}
@@ -2431,9 +2431,9 @@ namespace MicittApp.DataAccess
 		
 		private string _TELEFONO_USER;
 		
-		private int _ID_ROLE;
+		private string _ROLE;
 		
-		private int _ID_DPTO;
+		private string _NOMBRE_DPT;
 		
 		private string _PASSWORD_USER;
 		
@@ -2537,34 +2537,34 @@ namespace MicittApp.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ROLE", DbType="Int NOT NULL")]
-		public int ID_ROLE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ROLE", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string ROLE
 		{
 			get
 			{
-				return this._ID_ROLE;
+				return this._ROLE;
 			}
 			set
 			{
-				if ((this._ID_ROLE != value))
+				if ((this._ROLE != value))
 				{
-					this._ID_ROLE = value;
+					this._ROLE = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DPTO", DbType="Int NOT NULL")]
-		public int ID_DPTO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DPT", DbType="VarChar(50)")]
+		public string NOMBRE_DPT
 		{
 			get
 			{
-				return this._ID_DPTO;
+				return this._NOMBRE_DPT;
 			}
 			set
 			{
-				if ((this._ID_DPTO != value))
+				if ((this._NOMBRE_DPT != value))
 				{
-					this._ID_DPTO = value;
+					this._NOMBRE_DPT = value;
 				}
 			}
 		}

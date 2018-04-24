@@ -127,7 +127,7 @@
       <Column Name="EMISOR_DOC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="DESTINATARIO_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UBICACION_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_TDOC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_TDOC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="PRIORIDAD_DOC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ID_IDENTIFICADOR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="FECHA_DOC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -154,7 +154,7 @@
     <Parameter Name="pNAME_TDOC" Type="System.String" DbType="VarChar(15)" />
     <ElementType Name="SP_CRUD_TDOCResult">
       <Column Name="ID_TDOC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NAMA_TDOC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_TDOC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.SP_CRUD_USUARIO" Method="SP_CRUD_USUARIO">
@@ -166,7 +166,7 @@
     <Parameter Name="pAPELLIDO2_USER" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="pCORREO_USER" Type="System.String" DbType="VarChar(150)" />
     <Parameter Name="pTELEFONO_USER" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="pID_ROLE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pROLE" Type="System.String" DbType="VarChar(15)" />
     <Parameter Name="pID_DPTO" Type="System.Int32" DbType="Int" />
     <Parameter Name="pPASSWORD_USER" Type="System.String" DbType="VarChar(30)" />
     <ElementType Name="SP_CRUD_USUARIOResult">
@@ -176,8 +176,8 @@
       <Column Name="APELLIDO2_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CORREO_USER" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="TELEFONO_USER" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DPTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="PASSWORD_USER" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>

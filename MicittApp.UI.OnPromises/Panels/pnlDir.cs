@@ -25,9 +25,9 @@ namespace MicittApp.UI.OnPromises.Panels
         {
             InitializeComponent();
             LoadDataGrid();
-            btnActivate.Enabled = false;
+          
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
+          
             btnDelete.Enabled = false;
         }
         //Managament Methods
@@ -114,9 +114,9 @@ namespace MicittApp.UI.OnPromises.Panels
         }
         private void dgvDir_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActivate.Enabled = true;
+          
             btnUpdate.Enabled = true;
-            btnInactive.Enabled = true;
+          
             btnDelete.Enabled = true;
             try
             {
@@ -140,9 +140,7 @@ namespace MicittApp.UI.OnPromises.Panels
         private void CleanFields()
         {
             txtDescripDir.Text = "";
-            btnActivate.Enabled = false;
             btnUpdate.Enabled = false;
-            btnInactive.Enabled = false;
             btnDelete.Enabled = false;
         }
         private bool CheckFields()

@@ -30,7 +30,7 @@ namespace MicittApp.DataAccess.Crud
             var Query = Context.SP_CRUD_TDOC((int)CrudActionEnum.Retrieve, Obj.Createby, Obj.Id_TDoc, Obj.Name_TDoc).ToList();
             foreach (SP_CRUD_TDOCResult Element in Query)
             {
-                TipoDocumento ObjTDOC = new TipoDocumento(Element.ID_TDOC, Element.NAMA_TDOC);
+                TipoDocumento ObjTDOC = new TipoDocumento(Element.ID_TDOC, Element.NAME_TDOC);
                 MyList.Add(ObjTDOC);
             }
             if (MyList.Count > 0)

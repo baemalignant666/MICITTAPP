@@ -20,7 +20,7 @@ namespace MicittApp.DataAccess.Crud
         public override bool Delete(BaseEntity entity)
         {
             var Obj = (Documento)entity;
-            Context.SP_CRUD_DOC((int)CrudActionEnum.Update, Obj.Id_doc, Obj.Cons_Doc, Obj.Createby, Obj.Id_Identificador, Obj.Titulo_doc,
+            Context.SP_CRUD_DOC((int)CrudActionEnum.Delete, Obj.Id_doc, Obj.Cons_Doc, Obj.Createby, Obj.Id_Identificador, Obj.Titulo_doc,
                 Obj.Emisor_doc, Obj.Destinatario_doc, Obj.Fecha_doc, Obj.Prioridad_doc, Obj.Ubicacion_doc, Obj.Id_TDoc);
             return true;
         }
@@ -34,7 +34,7 @@ namespace MicittApp.DataAccess.Crud
             foreach (SP_CRUD_DOCResult Element in Query)
             {
                 Documento ObjDoc = new Documento(Element.ID_DOC, Element.CONS_DOC, Element.TITULO_DOC, Element.EMISOR_DOC, Element.DESTINATARIO_DOC, Element.UBICACION_DOC,
-                    Element.ID_TDOC, Element.PRIORIDAD_DOC, Element.ID_IDENTIFICADOR, Element.FECHA_DOC);
+                    Element.NAME_TDOC, Element.PRIORIDAD_DOC, Element.ID_IDENTIFICADOR, Element.FECHA_DOC);
                 MyList.Add(ObjDoc);
             }
             if (MyList.Count > 0)

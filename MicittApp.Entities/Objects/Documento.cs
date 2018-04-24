@@ -18,6 +18,7 @@ namespace MicittApp.Entities.Objects
         public string Prioridad_doc { get; set; }
         public string Ubicacion_doc { get; set; }
         public int Id_TDoc { get; set; }
+        public string Name_TDoc { get; set; }
         public Documento()
         {
             Id_doc = 0;
@@ -46,6 +47,23 @@ namespace MicittApp.Entities.Objects
             this.Fecha_doc = pFecha_doc;
             
         }
+
+        public Documento(int pId_doc, string pCons_Doc, string pTitulo_doc,
+            string pEmisor_doc, string pDestinatario_doc, string pUbicacion_doc, string pName_TDoc, string pPrioridad_doc, string pId_Identificador, DateTime pFecha_doc)
+        {
+            this.Id_doc = pId_doc;
+            this.Cons_Doc = pCons_Doc;
+            this.Titulo_doc = pTitulo_doc;
+            this.Emisor_doc = pEmisor_doc;
+            this.Destinatario_doc = pDestinatario_doc;
+            this.Ubicacion_doc = pUbicacion_doc;
+            this.Name_TDoc = pName_TDoc;
+            this.Prioridad_doc = pPrioridad_doc;
+            this.Id_Identificador = pId_Identificador;
+            this.Fecha_doc = pFecha_doc;
+
+        }
+
         public Documento(int pId_doc, string pCons_Doc, string pId_Identificador, string pTitulo_doc,
             string pEmisor_doc, string pDestinatario_doc, DateTime pFecha_doc, string pPrioridad_doc, string pUbicacion_doc, int pId_TDoc, bool pState,
             string pCreateby, string pUpdateby, DateTime pCreateDate)

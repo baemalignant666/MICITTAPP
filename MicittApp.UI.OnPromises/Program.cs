@@ -15,14 +15,26 @@ namespace MicittApp.UI.OnPromises
         /// 
         public static class MystaticValues
         {
-            public static string IdSession = "186200492318";
+            public static string IdSession = "N/A";
         }
+        static ApplicationContext MainContext = new ApplicationContext();
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDashboard());
+           
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                MainContext.MainForm = new frmLogin();
+                Application.Run(MainContext);
+        }
+
+        public static void SetMainForm(Form MainForm)
+        {
+            MainContext.MainForm = MainForm;
+        }
+        public static void ShowMainForm()
+        {
+            MainContext.MainForm.Show();
         }
     }
 }
