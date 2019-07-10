@@ -27,7 +27,6 @@ namespace MicittApp.UI.OnPromises
                 MainContext.MainForm = new frmLogin();
                 Application.Run(MainContext);
         }
-
         public static void SetMainForm(Form MainForm)
         {
             MainContext.MainForm = MainForm;

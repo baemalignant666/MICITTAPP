@@ -70,6 +70,7 @@ namespace MicittApp.UI.OnPromises.Panels
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int Row = dgvDoc.CurrentRow.Index;
             var Titulo_Doc = txtTitulo_DOC.Text;
             var Emisor_Doc = txtEmisor_DOC.Text;
             var Dest_Doc = txtDest_DOC.Text;
@@ -85,6 +86,7 @@ namespace MicittApp.UI.OnPromises.Panels
                 {
                     //ObjDoc.Cons_Doc = "MICITT-" + Identi_Doc + "-" + TDOC + "-" + Result + "-" + Fecha_Doc;
                     //MICITT-RH-OF-01-2018
+                    ObjDoc.Id_doc = Convert.ToInt32(dgvDoc[0, Row].Value);
                     ObjDoc.Titulo_doc = Titulo_Doc;
                     ObjDoc.Emisor_doc = Emisor_Doc;
                     ObjDoc.Destinatario_doc = Dest_Doc;

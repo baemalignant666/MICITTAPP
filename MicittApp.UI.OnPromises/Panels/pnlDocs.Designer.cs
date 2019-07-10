@@ -46,6 +46,15 @@
             this.txtDest_DOC = new MetroFramework.Controls.MetroTextBox();
             this.lblDestinatario = new MetroFramework.Controls.MetroLabel();
             this.dgvDoc = new MetroFramework.Controls.MetroGrid();
+            this.lbldatedoc = new MetroFramework.Controls.MetroLabel();
+            this.cbPrio_Doc = new MetroFramework.Controls.MetroComboBox();
+            this.lblPriority = new MetroFramework.Controls.MetroLabel();
+            this.txtUbi_DOC = new MetroFramework.Controls.MetroTextBox();
+            this.lblUbicacion = new MetroFramework.Controls.MetroLabel();
+            this.txtEmisor_DOC = new MetroFramework.Controls.MetroTextBox();
+            this.lblEmisor = new MetroFramework.Controls.MetroLabel();
+            this.txtTitulo_DOC = new MetroFramework.Controls.MetroTextBox();
+            this.lblTitulo = new MetroFramework.Controls.MetroLabel();
             this.ID_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONS_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TITULO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,15 +65,6 @@
             this.PRIORIDAD_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONS_TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbldatedoc = new MetroFramework.Controls.MetroLabel();
-            this.cbPrio_Doc = new MetroFramework.Controls.MetroComboBox();
-            this.lblPriority = new MetroFramework.Controls.MetroLabel();
-            this.txtUbi_DOC = new MetroFramework.Controls.MetroTextBox();
-            this.lblUbicacion = new MetroFramework.Controls.MetroLabel();
-            this.txtEmisor_DOC = new MetroFramework.Controls.MetroTextBox();
-            this.lblEmisor = new MetroFramework.Controls.MetroLabel();
-            this.txtTitulo_DOC = new MetroFramework.Controls.MetroTextBox();
-            this.lblTitulo = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl.SuspendLayout();
             this.TabDocs.SuspendLayout();
@@ -181,7 +181,7 @@
             this.cbType.Location = new System.Drawing.Point(351, 7);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(143, 29);
-            this.cbType.TabIndex = 25;
+            this.cbType.TabIndex = 5;
             this.cbType.UseSelectable = true;
             // 
             // lblTipo
@@ -200,7 +200,7 @@
             this.cbCons.Location = new System.Drawing.Point(351, 71);
             this.cbCons.Name = "cbCons";
             this.cbCons.Size = new System.Drawing.Size(143, 29);
-            this.cbCons.TabIndex = 23;
+            this.cbCons.TabIndex = 7;
             this.cbCons.UseSelectable = true;
             // 
             // lblCons
@@ -219,7 +219,7 @@
             this.dtpDateDoc.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDateDoc.Name = "dtpDateDoc";
             this.dtpDateDoc.Size = new System.Drawing.Size(143, 29);
-            this.dtpDateDoc.TabIndex = 21;
+            this.dtpDateDoc.TabIndex = 8;
             // 
             // txtDest_DOC
             // 
@@ -246,7 +246,7 @@
             this.txtDest_DOC.SelectionStart = 0;
             this.txtDest_DOC.ShortcutsEnabled = true;
             this.txtDest_DOC.Size = new System.Drawing.Size(143, 23);
-            this.txtDest_DOC.TabIndex = 19;
+            this.txtDest_DOC.TabIndex = 3;
             this.txtDest_DOC.UseSelectable = true;
             this.txtDest_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDest_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -318,6 +318,155 @@
             this.dgvDoc.TabIndex = 17;
             this.dgvDoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoc_CellClick);
             // 
+            // lbldatedoc
+            // 
+            this.lbldatedoc.AutoSize = true;
+            this.lbldatedoc.Location = new System.Drawing.Point(266, 114);
+            this.lbldatedoc.Name = "lbldatedoc";
+            this.lbldatedoc.Size = new System.Drawing.Size(43, 19);
+            this.lbldatedoc.TabIndex = 13;
+            this.lbldatedoc.Text = "Fecha";
+            // 
+            // cbPrio_Doc
+            // 
+            this.cbPrio_Doc.FormattingEnabled = true;
+            this.cbPrio_Doc.ItemHeight = 23;
+            this.cbPrio_Doc.Items.AddRange(new object[] {
+            "Normal",
+            "Media",
+            "Alta"});
+            this.cbPrio_Doc.Location = new System.Drawing.Point(351, 40);
+            this.cbPrio_Doc.Name = "cbPrio_Doc";
+            this.cbPrio_Doc.Size = new System.Drawing.Size(143, 29);
+            this.cbPrio_Doc.TabIndex = 6;
+            this.cbPrio_Doc.UseSelectable = true;
+            // 
+            // lblPriority
+            // 
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Location = new System.Drawing.Point(266, 50);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(64, 19);
+            this.lblPriority.TabIndex = 10;
+            this.lblPriority.Text = "Prioridad";
+            // 
+            // txtUbi_DOC
+            // 
+            // 
+            // 
+            // 
+            this.txtUbi_DOC.CustomButton.Image = null;
+            this.txtUbi_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtUbi_DOC.CustomButton.Name = "";
+            this.txtUbi_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUbi_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUbi_DOC.CustomButton.TabIndex = 1;
+            this.txtUbi_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUbi_DOC.CustomButton.UseSelectable = true;
+            this.txtUbi_DOC.CustomButton.Visible = false;
+            this.txtUbi_DOC.Lines = new string[0];
+            this.txtUbi_DOC.Location = new System.Drawing.Point(104, 100);
+            this.txtUbi_DOC.MaxLength = 32767;
+            this.txtUbi_DOC.Name = "txtUbi_DOC";
+            this.txtUbi_DOC.PasswordChar = '\0';
+            this.txtUbi_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUbi_DOC.SelectedText = "";
+            this.txtUbi_DOC.SelectionLength = 0;
+            this.txtUbi_DOC.SelectionStart = 0;
+            this.txtUbi_DOC.ShortcutsEnabled = true;
+            this.txtUbi_DOC.Size = new System.Drawing.Size(143, 23);
+            this.txtUbi_DOC.TabIndex = 4;
+            this.txtUbi_DOC.UseSelectable = true;
+            this.txtUbi_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUbi_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblUbicacion
+            // 
+            this.lblUbicacion.AutoSize = true;
+            this.lblUbicacion.Location = new System.Drawing.Point(5, 104);
+            this.lblUbicacion.Name = "lblUbicacion";
+            this.lblUbicacion.Size = new System.Drawing.Size(66, 19);
+            this.lblUbicacion.TabIndex = 6;
+            this.lblUbicacion.Text = "Ubicación";
+            // 
+            // txtEmisor_DOC
+            // 
+            // 
+            // 
+            // 
+            this.txtEmisor_DOC.CustomButton.Image = null;
+            this.txtEmisor_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtEmisor_DOC.CustomButton.Name = "";
+            this.txtEmisor_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtEmisor_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtEmisor_DOC.CustomButton.TabIndex = 1;
+            this.txtEmisor_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEmisor_DOC.CustomButton.UseSelectable = true;
+            this.txtEmisor_DOC.CustomButton.Visible = false;
+            this.txtEmisor_DOC.Lines = new string[0];
+            this.txtEmisor_DOC.Location = new System.Drawing.Point(104, 42);
+            this.txtEmisor_DOC.MaxLength = 32767;
+            this.txtEmisor_DOC.Name = "txtEmisor_DOC";
+            this.txtEmisor_DOC.PasswordChar = '\0';
+            this.txtEmisor_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEmisor_DOC.SelectedText = "";
+            this.txtEmisor_DOC.SelectionLength = 0;
+            this.txtEmisor_DOC.SelectionStart = 0;
+            this.txtEmisor_DOC.ShortcutsEnabled = true;
+            this.txtEmisor_DOC.Size = new System.Drawing.Size(143, 23);
+            this.txtEmisor_DOC.TabIndex = 2;
+            this.txtEmisor_DOC.UseSelectable = true;
+            this.txtEmisor_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtEmisor_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblEmisor
+            // 
+            this.lblEmisor.AutoSize = true;
+            this.lblEmisor.Location = new System.Drawing.Point(5, 46);
+            this.lblEmisor.Name = "lblEmisor";
+            this.lblEmisor.Size = new System.Drawing.Size(49, 19);
+            this.lblEmisor.TabIndex = 4;
+            this.lblEmisor.Text = "Emisor";
+            // 
+            // txtTitulo_DOC
+            // 
+            // 
+            // 
+            // 
+            this.txtTitulo_DOC.CustomButton.Image = null;
+            this.txtTitulo_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtTitulo_DOC.CustomButton.Name = "";
+            this.txtTitulo_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTitulo_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTitulo_DOC.CustomButton.TabIndex = 1;
+            this.txtTitulo_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTitulo_DOC.CustomButton.UseSelectable = true;
+            this.txtTitulo_DOC.CustomButton.Visible = false;
+            this.txtTitulo_DOC.Lines = new string[0];
+            this.txtTitulo_DOC.Location = new System.Drawing.Point(104, 13);
+            this.txtTitulo_DOC.MaxLength = 32767;
+            this.txtTitulo_DOC.Name = "txtTitulo_DOC";
+            this.txtTitulo_DOC.PasswordChar = '\0';
+            this.txtTitulo_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTitulo_DOC.SelectedText = "";
+            this.txtTitulo_DOC.SelectionLength = 0;
+            this.txtTitulo_DOC.SelectionStart = 0;
+            this.txtTitulo_DOC.ShortcutsEnabled = true;
+            this.txtTitulo_DOC.Size = new System.Drawing.Size(143, 23);
+            this.txtTitulo_DOC.TabIndex = 1;
+            this.txtTitulo_DOC.UseSelectable = true;
+            this.txtTitulo_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTitulo_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(5, 17);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(45, 19);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "Titulo ";
+            // 
             // ID_DOC
             // 
             this.ID_DOC.HeaderText = "ID_DOC";
@@ -330,12 +479,14 @@
             this.CONS_DOC.HeaderText = "Consecutivo_Doc";
             this.CONS_DOC.Name = "CONS_DOC";
             this.CONS_DOC.ReadOnly = true;
+            this.CONS_DOC.Width = 150;
             // 
             // TITULO_DOC
             // 
             this.TITULO_DOC.HeaderText = "Titulo";
             this.TITULO_DOC.Name = "TITULO_DOC";
             this.TITULO_DOC.ReadOnly = true;
+            this.TITULO_DOC.Width = 150;
             // 
             // EMISOR_DOC
             // 
@@ -378,155 +529,6 @@
             this.FECHA_DOC.HeaderText = "Fecha";
             this.FECHA_DOC.Name = "FECHA_DOC";
             this.FECHA_DOC.ReadOnly = true;
-            // 
-            // lbldatedoc
-            // 
-            this.lbldatedoc.AutoSize = true;
-            this.lbldatedoc.Location = new System.Drawing.Point(266, 114);
-            this.lbldatedoc.Name = "lbldatedoc";
-            this.lbldatedoc.Size = new System.Drawing.Size(43, 19);
-            this.lbldatedoc.TabIndex = 13;
-            this.lbldatedoc.Text = "Fecha";
-            // 
-            // cbPrio_Doc
-            // 
-            this.cbPrio_Doc.FormattingEnabled = true;
-            this.cbPrio_Doc.ItemHeight = 23;
-            this.cbPrio_Doc.Items.AddRange(new object[] {
-            "Normal",
-            "Media",
-            "Alta"});
-            this.cbPrio_Doc.Location = new System.Drawing.Point(351, 40);
-            this.cbPrio_Doc.Name = "cbPrio_Doc";
-            this.cbPrio_Doc.Size = new System.Drawing.Size(143, 29);
-            this.cbPrio_Doc.TabIndex = 12;
-            this.cbPrio_Doc.UseSelectable = true;
-            // 
-            // lblPriority
-            // 
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Location = new System.Drawing.Point(266, 50);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(64, 19);
-            this.lblPriority.TabIndex = 10;
-            this.lblPriority.Text = "Prioridad";
-            // 
-            // txtUbi_DOC
-            // 
-            // 
-            // 
-            // 
-            this.txtUbi_DOC.CustomButton.Image = null;
-            this.txtUbi_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtUbi_DOC.CustomButton.Name = "";
-            this.txtUbi_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtUbi_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUbi_DOC.CustomButton.TabIndex = 1;
-            this.txtUbi_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUbi_DOC.CustomButton.UseSelectable = true;
-            this.txtUbi_DOC.CustomButton.Visible = false;
-            this.txtUbi_DOC.Lines = new string[0];
-            this.txtUbi_DOC.Location = new System.Drawing.Point(104, 100);
-            this.txtUbi_DOC.MaxLength = 32767;
-            this.txtUbi_DOC.Name = "txtUbi_DOC";
-            this.txtUbi_DOC.PasswordChar = '\0';
-            this.txtUbi_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUbi_DOC.SelectedText = "";
-            this.txtUbi_DOC.SelectionLength = 0;
-            this.txtUbi_DOC.SelectionStart = 0;
-            this.txtUbi_DOC.ShortcutsEnabled = true;
-            this.txtUbi_DOC.Size = new System.Drawing.Size(143, 23);
-            this.txtUbi_DOC.TabIndex = 7;
-            this.txtUbi_DOC.UseSelectable = true;
-            this.txtUbi_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUbi_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblUbicacion
-            // 
-            this.lblUbicacion.AutoSize = true;
-            this.lblUbicacion.Location = new System.Drawing.Point(5, 104);
-            this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(66, 19);
-            this.lblUbicacion.TabIndex = 6;
-            this.lblUbicacion.Text = "Ubicación";
-            // 
-            // txtEmisor_DOC
-            // 
-            // 
-            // 
-            // 
-            this.txtEmisor_DOC.CustomButton.Image = null;
-            this.txtEmisor_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtEmisor_DOC.CustomButton.Name = "";
-            this.txtEmisor_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtEmisor_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtEmisor_DOC.CustomButton.TabIndex = 1;
-            this.txtEmisor_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtEmisor_DOC.CustomButton.UseSelectable = true;
-            this.txtEmisor_DOC.CustomButton.Visible = false;
-            this.txtEmisor_DOC.Lines = new string[0];
-            this.txtEmisor_DOC.Location = new System.Drawing.Point(104, 42);
-            this.txtEmisor_DOC.MaxLength = 32767;
-            this.txtEmisor_DOC.Name = "txtEmisor_DOC";
-            this.txtEmisor_DOC.PasswordChar = '\0';
-            this.txtEmisor_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtEmisor_DOC.SelectedText = "";
-            this.txtEmisor_DOC.SelectionLength = 0;
-            this.txtEmisor_DOC.SelectionStart = 0;
-            this.txtEmisor_DOC.ShortcutsEnabled = true;
-            this.txtEmisor_DOC.Size = new System.Drawing.Size(143, 23);
-            this.txtEmisor_DOC.TabIndex = 5;
-            this.txtEmisor_DOC.UseSelectable = true;
-            this.txtEmisor_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtEmisor_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblEmisor
-            // 
-            this.lblEmisor.AutoSize = true;
-            this.lblEmisor.Location = new System.Drawing.Point(5, 46);
-            this.lblEmisor.Name = "lblEmisor";
-            this.lblEmisor.Size = new System.Drawing.Size(49, 19);
-            this.lblEmisor.TabIndex = 4;
-            this.lblEmisor.Text = "Emisor";
-            // 
-            // txtTitulo_DOC
-            // 
-            // 
-            // 
-            // 
-            this.txtTitulo_DOC.CustomButton.Image = null;
-            this.txtTitulo_DOC.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtTitulo_DOC.CustomButton.Name = "";
-            this.txtTitulo_DOC.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtTitulo_DOC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTitulo_DOC.CustomButton.TabIndex = 1;
-            this.txtTitulo_DOC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTitulo_DOC.CustomButton.UseSelectable = true;
-            this.txtTitulo_DOC.CustomButton.Visible = false;
-            this.txtTitulo_DOC.Lines = new string[0];
-            this.txtTitulo_DOC.Location = new System.Drawing.Point(104, 13);
-            this.txtTitulo_DOC.MaxLength = 32767;
-            this.txtTitulo_DOC.Name = "txtTitulo_DOC";
-            this.txtTitulo_DOC.PasswordChar = '\0';
-            this.txtTitulo_DOC.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTitulo_DOC.SelectedText = "";
-            this.txtTitulo_DOC.SelectionLength = 0;
-            this.txtTitulo_DOC.SelectionStart = 0;
-            this.txtTitulo_DOC.ShortcutsEnabled = true;
-            this.txtTitulo_DOC.Size = new System.Drawing.Size(143, 23);
-            this.txtTitulo_DOC.TabIndex = 3;
-            this.txtTitulo_DOC.UseSelectable = true;
-            this.txtTitulo_DOC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTitulo_DOC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(5, 17);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(45, 19);
-            this.lblTitulo.TabIndex = 2;
-            this.lblTitulo.Text = "Titulo ";
             // 
             // pnlDocs
             // 

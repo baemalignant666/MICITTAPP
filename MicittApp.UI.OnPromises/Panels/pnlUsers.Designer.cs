@@ -40,14 +40,6 @@
             this.txtIdUser = new MetroFramework.Controls.MetroTextBox();
             this.lblIDUser = new MetroFramework.Controls.MetroLabel();
             this.dgvUser = new MetroFramework.Controls.MetroGrid();
-            this.NOMBREC_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LASTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAILUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PASSWOORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PHONEUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROLUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.lblPassword = new MetroFramework.Controls.MetroLabel();
             this.cbDpto = new MetroFramework.Controls.MetroComboBox();
@@ -63,6 +55,14 @@
             this.txtNameUser = new MetroFramework.Controls.MetroTextBox();
             this.lblNameUser = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.NOMBREC_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LASTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAILUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PASSWOORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONEUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ROLUSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl.SuspendLayout();
             this.TabUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
@@ -248,61 +248,6 @@
             this.dgvUser.Size = new System.Drawing.Size(696, 267);
             this.dgvUser.TabIndex = 17;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
-            // 
-            // NOMBREC_USER
-            // 
-            this.NOMBREC_USER.HeaderText = "Nombre";
-            this.NOMBREC_USER.Name = "NOMBREC_USER";
-            this.NOMBREC_USER.ReadOnly = true;
-            // 
-            // LASTNAME
-            // 
-            this.LASTNAME.HeaderText = "Apellidos";
-            this.LASTNAME.Name = "LASTNAME";
-            this.LASTNAME.ReadOnly = true;
-            // 
-            // ID_USER
-            // 
-            this.ID_USER.HeaderText = "Cédula";
-            this.ID_USER.Name = "ID_USER";
-            this.ID_USER.ReadOnly = true;
-            this.ID_USER.Width = 75;
-            // 
-            // ID_DPTO
-            // 
-            this.ID_DPTO.HeaderText = "Departamento";
-            this.ID_DPTO.Name = "ID_DPTO";
-            this.ID_DPTO.ReadOnly = true;
-            this.ID_DPTO.Width = 80;
-            // 
-            // EMAILUSER
-            // 
-            this.EMAILUSER.HeaderText = "Correo";
-            this.EMAILUSER.Name = "EMAILUSER";
-            this.EMAILUSER.ReadOnly = true;
-            this.EMAILUSER.Width = 80;
-            // 
-            // PASSWOORD
-            // 
-            this.PASSWOORD.HeaderText = "Contraseña";
-            this.PASSWOORD.Name = "PASSWOORD";
-            this.PASSWOORD.ReadOnly = true;
-            this.PASSWOORD.Visible = false;
-            this.PASSWOORD.Width = 75;
-            // 
-            // PHONEUSER
-            // 
-            this.PHONEUSER.HeaderText = "Teléfono";
-            this.PHONEUSER.Name = "PHONEUSER";
-            this.PHONEUSER.ReadOnly = true;
-            this.PHONEUSER.Width = 75;
-            // 
-            // ROLUSER
-            // 
-            this.ROLUSER.HeaderText = "Rol";
-            this.ROLUSER.Name = "ROLUSER";
-            this.ROLUSER.ReadOnly = true;
-            this.ROLUSER.Width = 50;
             // 
             // txtPassword
             // 
@@ -558,6 +503,61 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // NOMBREC_USER
+            // 
+            this.NOMBREC_USER.HeaderText = "Nombre";
+            this.NOMBREC_USER.Name = "NOMBREC_USER";
+            this.NOMBREC_USER.ReadOnly = true;
+            // 
+            // LASTNAME
+            // 
+            this.LASTNAME.HeaderText = "Apellidos";
+            this.LASTNAME.Name = "LASTNAME";
+            this.LASTNAME.ReadOnly = true;
+            // 
+            // ID_USER
+            // 
+            this.ID_USER.HeaderText = "Cédula";
+            this.ID_USER.Name = "ID_USER";
+            this.ID_USER.ReadOnly = true;
+            this.ID_USER.Width = 75;
+            // 
+            // ID_DPTO
+            // 
+            this.ID_DPTO.HeaderText = "Departamento";
+            this.ID_DPTO.Name = "ID_DPTO";
+            this.ID_DPTO.ReadOnly = true;
+            this.ID_DPTO.Width = 80;
+            // 
+            // EMAILUSER
+            // 
+            this.EMAILUSER.HeaderText = "Correo";
+            this.EMAILUSER.Name = "EMAILUSER";
+            this.EMAILUSER.ReadOnly = true;
+            this.EMAILUSER.Width = 150;
+            // 
+            // PASSWOORD
+            // 
+            this.PASSWOORD.HeaderText = "Contraseña";
+            this.PASSWOORD.Name = "PASSWOORD";
+            this.PASSWOORD.ReadOnly = true;
+            this.PASSWOORD.Visible = false;
+            this.PASSWOORD.Width = 75;
+            // 
+            // PHONEUSER
+            // 
+            this.PHONEUSER.HeaderText = "Teléfono";
+            this.PHONEUSER.Name = "PHONEUSER";
+            this.PHONEUSER.ReadOnly = true;
+            this.PHONEUSER.Width = 75;
+            // 
+            // ROLUSER
+            // 
+            this.ROLUSER.HeaderText = "Rol";
+            this.ROLUSER.Name = "ROLUSER";
+            this.ROLUSER.ReadOnly = true;
+            this.ROLUSER.Width = 50;
             // 
             // pnlUsers
             // 
